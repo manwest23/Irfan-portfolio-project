@@ -1,0 +1,1252 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Muhamad Irfan | Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        margin: 0;
+        font-family: "Montserrat", sans-serif;
+        overflow-x: hidden;
+      }
+
+      /* HERO SECTION */
+      .hero-section {
+        position: relative;
+        background: url("images/irfanbg.png") center center/cover no-repeat;
+        min-height: 100vh;
+        color: #ffffff;
+        overflow: hidden;
+      }
+
+      /* Overlay */
+      .hero-section::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.55);
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+      }
+
+      /* Navbar */
+      .navbar {
+        z-index: 3;
+        background: transparent;
+      }
+
+      .navbar .nav-link {
+        color: #ffffff !important;
+        font-weight: 500;
+        letter-spacing: 1px;
+      }
+
+      .navbar .nav-link:hover {
+        color: #3da5f4 !important;
+      }
+
+      /* Desktop navbar center */
+      @media (min-width: 992px) {
+        .navbar .container {
+          justify-content: center !important;
+        }
+      }
+
+      /* Mobile menu styling */
+      @media (max-width: 991px) {
+        .navbar .container {
+          position: relative;
+          justify-content: flex-end !important;
+        }
+
+        .navbar-toggler {
+          border: 1px solid rgba(255, 255, 255, 0.35);
+          padding: 6px 10px;
+          border-radius: 10px;
+          background: rgba(10, 14, 22, 0.6);
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+        }
+
+        .navbar-collapse {
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 100%;
+          width: 100%;
+          margin-top: 12px;
+          padding: 14px 18px;
+          border-radius: 14px;
+          background: rgba(7, 11, 18, 0.92);
+          backdrop-filter: blur(8px);
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+          transition:
+            transform 0.25s ease,
+            opacity 0.25s ease;
+        }
+
+        .navbar-collapse.collapse {
+          transform: translateY(-8px);
+          opacity: 0;
+        }
+
+        .navbar-collapse.collapsing {
+          transform: translateY(-8px);
+          opacity: 0;
+        }
+
+        .navbar-collapse.show {
+          transform: translateY(0);
+          opacity: 1;
+        }
+
+        .navbar-nav .nav-link {
+          padding: 10px 0;
+        }
+      }
+
+      /* Text Styling */
+      .hello-text {
+        color: #3da5f4;
+        font-weight: 700;
+        font-size: 2rem;
+      }
+
+      .main-title {
+        font-weight: 700;
+        font-size: 3.5rem;
+        line-height: 1.2;
+      }
+
+      .role-text {
+        font-weight: 600;
+        font-size: 2.2rem;
+      }
+
+      /* Desktop vertical offset */
+      @media (min-width: 992px) {
+        .left-content {
+          transform: translateY(-60px);
+        }
+
+        .right-content {
+          transform: translateY(320px);
+        }
+      }
+
+      /* Responsive text sizing */
+      @media (max-width: 991px) {
+        .main-title {
+          font-size: 2.5rem;
+        }
+
+        .role-text {
+          font-size: 1.8rem;
+          margin-top: 20px;
+        }
+      }
+
+      /* ABOUT SECTION */
+      .about-section {
+        position: relative;
+        background: #070b12;
+        color: #e9e9e9;
+        padding: 100px 0;
+        overflow: hidden;
+      }
+
+      .about-section::before {
+        content: "";
+        position: absolute;
+        inset: -20% -10%;
+        background: radial-gradient(
+          900px 500px at 10% 20%,
+          rgba(228, 162, 34, 0.22),
+          rgba(0, 0, 0, 0) 60%
+        );
+        animation: aboutGlow 14s ease-in-out infinite alternate;
+        z-index: 0;
+      }
+
+      .about-section::after {
+        content: "";
+        position: absolute;
+        inset: -20% -10%;
+        background: radial-gradient(
+          1000px 600px at 90% 30%,
+          rgba(61, 165, 244, 0.18),
+          rgba(0, 0, 0, 0) 60%
+        );
+        animation: aboutGlow 18s ease-in-out infinite alternate-reverse;
+        z-index: 0;
+      }
+
+      @keyframes aboutGlow {
+        0% {
+          transform: translate3d(0, 0, 0);
+        }
+        100% {
+          transform: translate3d(-6%, 4%, 0);
+        }
+      }
+
+      .about-section .container {
+        position: relative;
+        z-index: 1;
+      }
+
+      .about-title {
+        font-weight: 700;
+        letter-spacing: 1px;
+        font-size: 2.2rem;
+        margin-bottom: 8px;
+        background: linear-gradient(120deg, #f2c44f, #3da5f4, #f2c44f);
+        background-size: 200% 100%;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        animation: aboutTitleGlow 6s ease-in-out infinite;
+      }
+
+      .about-underline {
+        width: 180px;
+        height: 2px;
+        background: #e4a222;
+        margin-bottom: 28px;
+      }
+
+      @keyframes aboutTitleGlow {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      .about-text {
+        line-height: 1.7;
+        color: #d9d9d9;
+      }
+
+      .about-text + .about-text {
+        margin-top: 20px;
+      }
+
+      .about-cta {
+        margin-top: 28px;
+        padding: 12px 28px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, #1e2b3f 0%, #0d1b2a 100%);
+        color: #ffffff;
+        border: 1px solid rgba(255, 255, 255, 0.35);
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease,
+          background 0.2s ease;
+      }
+
+      .about-cta:hover {
+        transform: translateY(-2px);
+        background: linear-gradient(135deg, #2a4060 0%, #14263b 100%);
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
+        color: #ffffff;
+      }
+
+      .about-image {
+        width: 100%;
+        max-width: 420px;
+        border-radius: 12px;
+        border: 2px solid #e4a222;
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+      }
+
+      /* HERO ANIMATION */
+      .hero-section::after {
+        content: "";
+        position: absolute;
+        inset: -30% -20%;
+        background: radial-gradient(
+          900px 500px at 20% 20%,
+          rgba(61, 165, 244, 0.18),
+          rgba(0, 0, 0, 0) 60%
+        );
+        animation: heroGlow 12s ease-in-out infinite alternate;
+        z-index: 1;
+      }
+
+      @keyframes heroGlow {
+        0% {
+          transform: translate3d(0, 0, 0);
+        }
+        100% {
+          transform: translate3d(6%, -4%, 0);
+        }
+      }
+
+      .hero-content {
+        animation: heroFadeUp 1s ease both;
+      }
+
+      @keyframes heroFadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(18px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .resume-modal .modal-content {
+        background: #0b0f17;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .resume-frame {
+        width: 100%;
+        height: 75vh;
+        border: none;
+      }
+
+      /* EXPERIENCE SECTION */
+      .experience-section {
+        position: relative;
+        padding: 110px 0;
+        color: #e9e9e9;
+        background: #070b12;
+        overflow: hidden;
+      }
+
+      .experience-section::before {
+        content: "";
+        position: absolute;
+        inset: -20% -10%;
+        background: radial-gradient(
+          900px 600px at 20% 20%,
+          rgba(61, 165, 244, 0.12),
+          rgba(0, 0, 0, 0) 60%
+        );
+        animation: expGlow 18s ease-in-out infinite alternate;
+        z-index: 0;
+      }
+
+      .experience-section::after {
+        content: "";
+        position: absolute;
+        inset: -20% -10%;
+        background: radial-gradient(
+          1000px 700px at 85% 70%,
+          rgba(228, 162, 34, 0.12),
+          rgba(0, 0, 0, 0) 60%
+        );
+        animation: expGlow 22s ease-in-out infinite alternate-reverse;
+        z-index: 0;
+      }
+
+      @keyframes expGlow {
+        0% {
+          transform: translate3d(0, 0, 0);
+        }
+        100% {
+          transform: translate3d(-4%, 3%, 0);
+        }
+      }
+
+      .experience-section .container {
+        position: relative;
+        z-index: 1;
+      }
+
+      .experience-title {
+        text-align: center;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        margin-bottom: 8px;
+        background: linear-gradient(120deg, #f2c44f, #3da5f4, #f2c44f);
+        background-size: 200% 100%;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        animation: aboutTitleGlow 6s ease-in-out infinite;
+      }
+
+      .experience-underline {
+        width: 220px;
+        height: 2px;
+        background: #e4a222;
+        margin: 0 auto 50px;
+      }
+
+      .experience-timeline {
+        position: relative;
+        padding: 10px 0;
+      }
+
+      .experience-timeline::before {
+        content: "";
+        position: absolute;
+        top: var(--line-start, 0);
+        bottom: calc(100% - var(--line-end, 100%));
+        left: 50%;
+        width: 2px;
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.15),
+          rgba(255, 255, 255, 0.55),
+          rgba(255, 255, 255, 0.15)
+        );
+        background-size: 100% 200%;
+        animation: lineGlow 6s ease-in-out infinite;
+        transform: translateX(-50%);
+      }
+
+      .timeline-item {
+        position: relative;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 140px minmax(0, 1fr);
+        gap: 28px;
+        align-items: start;
+        margin: 48px 0;
+      }
+
+      .timeline-item .timeline-dot {
+        position: absolute;
+        left: 50%;
+        width: 14px;
+        height: 14px;
+        background: #e4a222;
+        border-radius: 50%;
+        transform: translate(-50%, 0);
+        box-shadow: 0 0 0 6px rgba(228, 162, 34, 0.18);
+        animation: dotPulse 3s ease-in-out infinite;
+      }
+
+      .timeline-date {
+        color: #e4a222;
+        font-weight: 600;
+        margin-bottom: 2px;
+      }
+
+      .timeline-side.left .timeline-date {
+        display: inline-block;
+        transform: translateX(66px);
+      }
+
+      .timeline-side.right .timeline-date {
+        display: inline-block;
+        transform: translateX(-66px);
+      }
+
+      .timeline-title {
+        font-weight: 600;
+        margin-bottom: 2px;
+        text-align: left;
+      }
+
+      .timeline-company {
+        color: #e4a222;
+        margin-bottom: 8px;
+        text-align: left;
+      }
+
+      .timeline-list {
+        margin: 0;
+        padding-left: 18px;
+        color: #d0d0d0;
+        text-align: left;
+      }
+
+      .timeline-side {
+        background: transparent;
+        border: 0;
+        padding: 0;
+        border-radius: 0;
+        box-shadow: none;
+        max-width: 360px;
+      }
+
+      .timeline-side.right {
+        grid-column: 3;
+        justify-self: start;
+      }
+
+      .timeline-side.left {
+        grid-column: 1;
+        text-align: right;
+        justify-self: end;
+      }
+
+      @keyframes lineGlow {
+        0%,
+        100% {
+          background-position: 50% 0%;
+        }
+        50% {
+          background-position: 50% 100%;
+        }
+      }
+
+      @keyframes dotPulse {
+        0%,
+        100% {
+          box-shadow: 0 0 0 6px rgba(228, 162, 34, 0.18);
+        }
+        50% {
+          box-shadow: 0 0 0 10px rgba(228, 162, 34, 0.06);
+        }
+      }
+
+      @media (max-width: 991px) {
+        .experience-timeline::before {
+          left: 18px;
+        }
+
+        .timeline-item {
+          grid-template-columns: 1fr;
+          padding-left: 36px;
+        }
+
+        .timeline-item .timeline-dot {
+          left: 18px;
+        }
+
+        .timeline-side {
+          text-align: left;
+          max-width: 100%;
+          justify-self: start;
+        }
+
+        .timeline-date,
+        .timeline-title,
+        .timeline-company {
+          text-align: left;
+        }
+
+        .timeline-side.left .timeline-date,
+        .timeline-side.right .timeline-date {
+          display: block;
+          transform: none;
+        }
+
+        .timeline-side.left,
+        .timeline-side.right {
+          grid-column: 1;
+        }
+      }
+
+      /* Placeholder sections */
+      .section-placeholder {
+        padding: 90px 0;
+        background: #070b12;
+        color: #e9e9e9;
+      }
+
+      /* CONTACT SECTION */
+      .contact-section {
+        position: relative;
+        padding: 110px 0 120px;
+        background: #050505;
+        color: #e9e9e9;
+        text-align: center;
+      }
+
+      .contact-title {
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        margin-bottom: 8px;
+        background: linear-gradient(120deg, #f2c44f, #3da5f4, #f2c44f);
+        background-size: 200% 100%;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        animation: aboutTitleGlow 6s ease-in-out infinite;
+      }
+
+      .contact-underline {
+        width: 260px;
+        height: 2px;
+        background: #e4a222;
+        margin: 0 auto 48px;
+      }
+
+      .contact-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 36px;
+        align-items: start;
+      }
+
+      .contact-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 14px;
+      }
+
+      .contact-item:hover .contact-icon {
+        transform: translateY(-4px);
+        border-color: rgba(228, 162, 34, 0.6);
+        box-shadow: 0 10px 24px rgba(228, 162, 34, 0.2);
+      }
+
+      .contact-item:hover .contact-label {
+        color: #e4a222;
+      }
+
+      .contact-icon {
+        width: 70px;
+        height: 70px;
+        display: grid;
+        place-items: center;
+        border-radius: 18px;
+        border: 1px solid rgba(228, 162, 34, 0.3);
+        background: rgba(7, 7, 7, 0.6);
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease,
+          border-color 0.2s ease;
+      }
+
+      .contact-icon img {
+        width: 38px;
+        height: 38px;
+        object-fit: contain;
+      }
+
+      .contact-label {
+        font-weight: 600;
+        font-size: 1.05rem;
+      }
+
+      .contact-value {
+        color: #d0d0d0;
+        font-size: 0.95rem;
+        letter-spacing: 0.5px;
+      }
+
+      .contact-value a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .contact-value a:hover {
+        color: #e4a222;
+      }
+
+      @media (max-width: 991px) {
+        .contact-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 28px;
+        }
+      }
+
+      @media (max-width: 575px) {
+        .contact-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .section-placeholder:nth-of-type(even) {
+        background: #0b1019;
+      }
+
+      .section-placeholder h2 {
+        font-weight: 700;
+        letter-spacing: 1px;
+        margin-bottom: 10px;
+        background: linear-gradient(120deg, #f2c44f, #3da5f4, #f2c44f);
+        background-size: 200% 100%;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        animation: aboutTitleGlow 6s ease-in-out infinite;
+      }
+
+      /* SAMPLE WORK SECTION */
+      .work-section {
+        position: relative;
+        padding: 100px 0 120px;
+        background: #0b1526;
+        color: #e9e9e9;
+        overflow: hidden;
+      }
+
+      .work-section::before {
+        content: "";
+        position: absolute;
+        inset: -20% -10%;
+        background: radial-gradient(
+          900px 600px at 15% 25%,
+          rgba(61, 165, 244, 0.14),
+          rgba(0, 0, 0, 0) 60%
+        );
+        animation: workGlow 20s ease-in-out infinite alternate;
+        z-index: 0;
+      }
+
+      .work-section::after {
+        content: "";
+        position: absolute;
+        inset: -20% -10%;
+        background: radial-gradient(
+          1000px 700px at 85% 60%,
+          rgba(228, 162, 34, 0.12),
+          rgba(0, 0, 0, 0) 60%
+        );
+        animation: workGlow 24s ease-in-out infinite alternate-reverse;
+        z-index: 0;
+      }
+
+      @keyframes workGlow {
+        0% {
+          transform: translate3d(0, 0, 0);
+        }
+        100% {
+          transform: translate3d(-4%, 3%, 0);
+        }
+      }
+
+      .work-section .container {
+        position: relative;
+        z-index: 1;
+      }
+
+      .work-title {
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        margin-bottom: 8px;
+        background: linear-gradient(120deg, #f2c44f, #3da5f4, #f2c44f);
+        background-size: 200% 100%;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        animation: aboutTitleGlow 6s ease-in-out infinite;
+      }
+
+      .work-underline {
+        width: 220px;
+        height: 2px;
+        background: #e4a222;
+        margin-bottom: 40px;
+      }
+
+      .work-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 28px;
+      }
+
+      .work-card {
+        position: relative;
+        border-radius: 16px;
+        overflow: hidden;
+        background: #0e1421;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+        aspect-ratio: 1 / 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #ffffff;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 600;
+      }
+
+      .work-card img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.7;
+        transition:
+          transform 0.4s ease,
+          opacity 0.4s ease;
+      }
+
+      .work-card .work-label {
+        position: relative;
+        z-index: 1;
+        font-size: 1.3rem;
+        text-align: center;
+        transition:
+          transform 0.4s ease,
+          opacity 0.4s ease;
+      }
+
+      .work-card .work-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          180deg,
+          rgba(5, 8, 14, 0.2),
+          rgba(5, 8, 14, 0.85)
+        );
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 14px;
+        opacity: 0;
+        transform: translateY(10px);
+        transition:
+          opacity 0.3s ease,
+          transform 0.3s ease;
+        z-index: 2;
+        text-align: center;
+      }
+
+      .work-card .work-overlay h3 {
+        margin: 0;
+        font-size: 1.2rem;
+        letter-spacing: 1px;
+      }
+
+      .work-card .work-cta {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 22px;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        color: #ffffff;
+        text-decoration: none;
+        background: rgba(255, 255, 255, 0.08);
+        transition:
+          transform 0.2s ease,
+          background 0.2s ease;
+      }
+
+      .work-card .work-cta:hover {
+        background: rgba(228, 162, 34, 0.2);
+        transform: translateY(-2px);
+      }
+
+      .work-card:hover img {
+        transform: scale(1.05);
+        opacity: 0.55;
+      }
+
+      .work-card:hover .work-label {
+        opacity: 0;
+        transform: translateY(-6px);
+      }
+
+      .work-card:hover .work-overlay {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      @media (max-width: 1199px) {
+        .work-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 575px) {
+        .work-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="hero-section">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+          <!-- Hamburger Right Side -->
+          <button
+            class="navbar-toggler ms-auto"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navMenu"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div
+            class="collapse navbar-collapse justify-content-center"
+            id="navMenu"
+          >
+            <ul class="navbar-nav gap-lg-4 text-center">
+              <li class="nav-item">
+                <a class="nav-link" href="#about">ABOUT ME</a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="#"
+                  data-bs-toggle="modal"
+                  data-bs-target="#resumeModal"
+                >
+                  RESUME
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#experience">EXPERIENCE</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#work">SAMPLE WORK</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contact">CONTACT</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Hero Content -->
+      <div class="container hero-content">
+        <div class="row align-items-center min-vh-100">
+          <!-- Left Side -->
+          <div class="col-lg-7 text-lg-start text-center left-content">
+            <h4 class="hello-text">HELLO !</h4>
+            <h1 class="main-title">
+              I AM <br />
+              MUHAMAD IRFAN
+            </h1>
+          </div>
+
+          <!-- Right Side -->
+          <div class="col-lg-5 text-lg-end text-center right-content">
+            <h2 class="role-text">
+              DIGITAL <br />
+              MARKETING
+            </h2>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h2 class="about-title">ABOUT ME</h2>
+            <div class="about-underline"></div>
+          </div>
+        </div>
+        <div class="row align-items-center g-5">
+          <div class="col-lg-7 order-2 order-lg-1">
+            <p class="about-text">
+              I am a graduate of Bachelor of Digital Marketing (Hons) from
+              Universiti Teknologi Mara (UiTM), Segamat, Johor. With a strong
+              academic foundation and hands-on experience, I specialize in
+              managing marketing campaigns, enhancing digital engagement, and
+              developing effective social media advertising strategies.
+            </p>
+            <p class="about-text">
+              My approach to digital marketing is driven by creative thinking,
+              data-driven decision-making, and a focus on delivering measurable
+              results. I am passionate about challenging myself and continuously
+              innovating — whether it’s increasing brand visibility, crafting
+              engaging content, or analyzing campaign performance to optimize
+              results.
+            </p>
+            <p class="about-text">
+              Behind every successful campaign is strategy, creativity, and
+              data. Curious about my background, skills, and experience? My
+              resume is just one click away.
+            </p>
+            <button
+              class="btn about-cta"
+              type="button"
+              data-bs-toggle="modal"
+              data-bs-target="#resumeModal"
+            >
+              View My Journey
+            </button>
+          </div>
+          <div class="col-lg-5 text-center order-1 order-lg-2">
+            <img
+              class="about-image"
+              src="images/about.png"
+              alt="Portrait of Muhamad Irfan"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="experience-section" id="experience">
+      <div class="container">
+        <h2 class="experience-title">EXPERIENCE</h2>
+        <div class="experience-underline"></div>
+
+        <div class="experience-timeline">
+          <div class="timeline-item">
+            <span class="timeline-dot" aria-hidden="true"></span>
+            <div class="timeline-side left">
+              <div class="timeline-date">August 2025 - Present</div>
+              <div class="timeline-title">
+                Freelance Sales & Marketing Larasuka Coffee
+              </div>
+              <div class="timeline-company">Larasuka Coffee</div>
+              <ul class="timeline-list">
+                <li>Managed TikTok, Instagram & Threads content strategy.</li>
+                <li>
+                  Increased engagement by 45% through short-form video content.
+                </li>
+                <li>
+                  Generated 30+ qualified leads and secured 20+ event bookings.
+                </li>
+                <li>Achieved 150,000+ Instagram views within 3 months.</li>
+                <li>Improved online visibility with 1,900+ website views.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <span class="timeline-dot" aria-hidden="true"></span>
+            <div class="timeline-side right">
+              <div class="timeline-date">September 2024 - August 2025</div>
+              <div class="timeline-title">Digital Marketing Intern</div>
+              <div class="timeline-company">
+                PKNS (Perbadanan Kemajuan Negeri Selangor)
+              </div>
+              <ul class="timeline-list">
+                <li>Managed TikTok & Facebook for property marketing.</li>
+                <li>
+                  Increased engagement by 65% through structured content
+                  strategy.
+                </li>
+                <li>Generated 50+ organic property leads.</li>
+                <li>Produced viral TikTok video with 54,700+ views.</li>
+                <li>Coordinated 30+ sales staff for content initiatives.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <span class="timeline-dot" aria-hidden="true"></span>
+            <div class="timeline-side left">
+              <div class="timeline-date">June 2022 - April 2024</div>
+              <div class="timeline-title">Digital Marketing Project Lead</div>
+              <div class="timeline-company">RZL Asia Travel & Tours</div>
+              <ul class="timeline-list">
+                <li>
+                  Led social media marketing campaigns across major platforms.
+                </li>
+                <li>Managed paid advertising campaigns.</li>
+                <li>
+                  Achieved 70% audience engagement through video strategy.
+                </li>
+                <li>Increased followers by 300+ within 3 weeks.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <span class="timeline-dot" aria-hidden="true"></span>
+            <div class="timeline-side right">
+              <div class="timeline-date">June 2022 - April 2024</div>
+              <div class="timeline-title">Founder</div>
+              <div class="timeline-company">
+                CSMT.MY (Online Clothing Brand)
+              </div>
+              <ul class="timeline-list">
+                <li>Managed Instagram paid advertising campaigns.</li>
+                <li>Achieved 109,000+ engagements in 28 days.</li>
+                <li>Increased Raya campaign sales by 60%.</li>
+                <li>Collaborated with influencers for brand promotion.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sample Work Section -->
+    <section class="work-section" id="work">
+      <div class="container">
+        <h2 class="work-title">SAMPLE WORK</h2>
+        <div class="work-underline"></div>
+        <div class="work-grid">
+          <div class="work-card">
+            <img src="images/work-larasuka.png" alt="Larasuka Coffee" />
+            <div class="work-overlay">
+              <h3>LARASUKA COFFEE</h3>
+              <a class="work-cta" href="work/larasuka.html">View More</a>
+            </div>
+          </div>
+          <div class="work-card">
+            <img src="images/work-pkns.png" alt="PKNS" />
+            <div class="work-overlay">
+              <h3>PKNS</h3>
+              <a class="work-cta" href="work/pkns.html">View More</a>
+            </div>
+          </div>
+          <div class="work-card">
+            <img src="images/work-iklig.png" alt="Kilig Perfume" />
+            <div class="work-overlay">
+              <h3>KILIG</h3>
+              <a class="work-cta" href="work/kilig.html">View More</a>
+            </div>
+          </div>
+          <div class="work-card">
+            <img src="images/work-csmtmy.png" alt="CSMT.MY" />
+            <div class="work-overlay">
+              <h3>CSMT.MY</h3>
+              <a class="work-cta" href="work/csmt.html">View More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+      <div class="container">
+        <h2 class="contact-title">GET IN TOUCH</h2>
+        <div class="contact-underline"></div>
+        <div class="contact-grid">
+          <div class="contact-item">
+            <a class="contact-icon" href="tel:+60128550706">
+              <img src="images/phone.png" alt="Phone icon" />
+            </a>
+            <div class="contact-label">Phone & Mobile</div>
+            <div class="contact-value">
+              <a href="tel:+60128550706">+60128550706</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <a class="contact-icon" href="mailto:irfanrizal.dgm@gmail.com">
+              <img src="images/email.png" alt="Email icon" />
+            </a>
+            <div class="contact-label">G-mail & Website</div>
+            <div class="contact-value">
+              <a href="mailto:irfanrizal.dgm@gmail.com">
+                irfanrizal.dgm@gmail.com
+              </a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <a
+              class="contact-icon"
+              href="https://maps.google.com/?q=Shah+Alam,+Selangor"
+            >
+              <img src="images/address.png" alt="Address icon" />
+            </a>
+            <div class="contact-label">Address</div>
+            <div class="contact-value">Shah Alam, Selangor</div>
+          </div>
+          <div class="contact-item">
+            <a
+              class="contact-icon"
+              href="https://www.linkedin.com/in/muhamad-irfan-r-1a46542b6/"
+            >
+              <img src="images/linkedin.png" alt="LinkedIn icon" />
+            </a>
+            <div class="contact-label">LinkedIn</div>
+            <div class="contact-value">
+              <a href="https://www.linkedin.com/in/muhamad-irfan-r-1a46542b6/"
+                >Muhamad Irfan R</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resume Modal -->
+    <div
+      class="modal fade resume-modal"
+      id="resumeModal"
+      tabindex="-1"
+      aria-labelledby="resumeModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header border-0">
+            <h5 class="modal-title text-white" id="resumeModalLabel">Resume</h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body pt-0">
+            <iframe
+              class="resume-frame"
+              src="pdf/resume.pdf"
+              title="Resume PDF"
+            ></iframe>
+            <p class="text-center mt-3 mb-0">
+              <a
+                class="text-decoration-none text-warning"
+                href="pdf/resume.pdf"
+              >
+                Open resume in a new tab
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      // Navbar background on scroll
+      window.addEventListener("scroll", function () {
+        const navbar = document.querySelector(".navbar");
+        if (window.scrollY > 50) {
+          navbar.style.backgroundColor = "rgba(0,0,0,0.8)";
+        } else {
+          navbar.style.backgroundColor = "transparent";
+        }
+      });
+
+      // Align experience timeline line to first/last dots
+      const updateTimelineLine = () => {
+        const timeline = document.querySelector(".experience-timeline");
+        if (!timeline) return;
+        const dots = timeline.querySelectorAll(".timeline-dot");
+        if (dots.length < 2) return;
+
+        const timelineRect = timeline.getBoundingClientRect();
+        const firstRect = dots[0].getBoundingClientRect();
+        const lastRect = dots[dots.length - 1].getBoundingClientRect();
+
+        const start = firstRect.top - timelineRect.top + firstRect.height / 2;
+        const end = lastRect.top - timelineRect.top + lastRect.height / 2;
+
+        timeline.style.setProperty("--line-start", `${start}px`);
+        timeline.style.setProperty("--line-end", `${end}px`);
+      };
+
+      window.addEventListener("load", updateTimelineLine);
+      window.addEventListener("resize", updateTimelineLine);
+    </script>
+  </body>
+</html>
