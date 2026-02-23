@@ -1,0 +1,1715 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Lara Suka | Sample Work</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Montserrat:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        color-scheme: dark;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Montserrat", sans-serif;
+        background: #0a0f10;
+        color: #ffffff;
+      }
+
+      .hero {
+        position: relative;
+        min-height: 30vh;
+        background:
+          linear-gradient(rgba(11, 20, 15, 0.75), rgba(11, 20, 15, 0.75)),
+          url("images/work/larasuka/larasukahero.png") center center/cover
+            no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 120px 24px 80px;
+      }
+
+      .hero-nav {
+        position: absolute;
+        top: 18px;
+        left: 0;
+        right: 0;
+        transform: none;
+        z-index: 2;
+      }
+
+      .hero-nav .nav-link {
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        transition: color 0.2s ease;
+      }
+
+      .hero-nav .nav-link:hover {
+        color: #f2c44f;
+      }
+
+      .hero-nav .navbar {
+        padding: 0;
+      }
+
+      .hero-nav .navbar-toggler {
+        border: 1px solid rgba(255, 255, 255, 0.35);
+        padding: 6px 10px;
+        border-radius: 10px;
+        background: rgba(10, 14, 22, 0.6);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+      }
+
+      @media (min-width: 992px) {
+        .hero-nav .container-fluid {
+          justify-content: center !important;
+        }
+      }
+
+      @media (max-width: 991px) {
+        .hero-nav {
+          right: 16px;
+          left: 16px;
+        }
+
+        .hero-nav .container-fluid {
+          position: relative;
+          justify-content: flex-end !important;
+        }
+
+        .hero-nav .navbar-collapse {
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 100%;
+          width: 100%;
+          margin-top: 12px;
+          padding: 14px 18px;
+          border-radius: 14px;
+          background: rgba(7, 11, 18, 0.92);
+          backdrop-filter: blur(8px);
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+          transition:
+            transform 0.25s ease,
+            opacity 0.25s ease;
+        }
+
+        .hero-nav .navbar-collapse.collapse {
+          transform: translateY(-8px);
+          opacity: 0;
+        }
+
+        .hero-nav .navbar-collapse.collapsing {
+          transform: translateY(-8px);
+          opacity: 0;
+        }
+
+        .hero-nav .navbar-collapse.show {
+          transform: translateY(0);
+          opacity: 1;
+        }
+
+        .hero-nav .navbar-nav .nav-link {
+          padding: 10px 0;
+          text-align: center;
+        }
+      }
+
+      .hero-content {
+        text-align: center;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .logo {
+        width: min(320px, 70vw);
+        display: inline-block;
+        filter: drop-shadow(0 10px 24px rgba(0, 0, 0, 0.45));
+      }
+
+      .logo img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .subtitle {
+        margin-top: 8px;
+        letter-spacing: 6px;
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      .breadcrumb {
+        margin-top: 20px;
+        font-size: 0.95rem;
+        color: rgba(255, 255, 255, 0.8);
+        text-align: center;
+        width: 100%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .breadcrumb .highlight {
+        color: #f2c44f;
+        font-weight: 600;
+      }
+
+      .breadcrumb a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .breadcrumb a:hover {
+        color: #f2c44f;
+      }
+
+      /* Video Showcase */
+      .video-showcase {
+        padding: 80px 24px 110px;
+        position: relative;
+        background: #0a0f10;
+        overflow: hidden;
+      }
+
+      .video-showcase::before {
+        content: "";
+        position: absolute;
+        inset: -20% -10%;
+        background:
+          radial-gradient(
+            900px 600px at 15% 20%,
+            rgba(255, 166, 100, 0.3),
+            rgba(0, 0, 0, 0) 60%
+          ),
+          radial-gradient(
+            900px 600px at 85% 15%,
+            rgba(120, 200, 255, 0.28),
+            rgba(0, 0, 0, 0) 60%
+          ),
+          radial-gradient(
+            1000px 700px at 75% 80%,
+            rgba(255, 120, 200, 0.26),
+            rgba(0, 0, 0, 0) 60%
+          ),
+          radial-gradient(
+            900px 700px at 10% 85%,
+            rgba(90, 220, 170, 0.24),
+            rgba(0, 0, 0, 0) 60%
+          );
+        filter: blur(10px) saturate(1.2);
+        animation: videoGlow 20s ease-in-out infinite alternate;
+        z-index: 0;
+      }
+
+      .video-showcase::after {
+        content: "";
+        position: absolute;
+        inset: -20% -10%;
+        background: radial-gradient(
+          1200px 900px at 50% 50%,
+          rgba(0, 0, 0, 0.55),
+          rgba(0, 0, 0, 0.85)
+        );
+        mix-blend-mode: multiply;
+        animation: videoGlow 26s ease-in-out infinite alternate-reverse;
+        z-index: 0;
+      }
+
+      .video-showcase > * {
+        position: relative;
+        z-index: 1;
+      }
+
+      @keyframes videoGlow {
+        0% {
+          transform: translate3d(0, 0, 0) scale(1);
+        }
+        100% {
+          transform: translate3d(-6%, 4%, 0) scale(1.05);
+        }
+      }
+
+      .video-title {
+        text-align: center;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        margin-bottom: 8px;
+        background: linear-gradient(120deg, #f2c44f, #3da5f4, #f2c44f);
+        background-size: 200% 100%;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        animation: aboutTitleGlow 6s ease-in-out infinite;
+      }
+
+      .video-underline {
+        width: 220px;
+        height: 2px;
+        background: #e4a222;
+        margin: 0 auto 36px;
+      }
+
+      .video-carousel {
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+
+      .video-main {
+        position: relative;
+        border-radius: 18px;
+        overflow: hidden;
+        background: #11181a;
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+        aspect-ratio: 16 / 9;
+      }
+
+      .video-main video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .video-next {
+        position: absolute;
+        top: 50%;
+        right: 16px;
+        transform: translateY(-50%);
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        border: 1px solid rgba(255, 255, 255, 0.35);
+        background: rgba(0, 0, 0, 0.5);
+        color: #ffffff;
+        display: grid;
+        place-items: center;
+        cursor: pointer;
+        transition:
+          transform 0.2s ease,
+          background 0.2s ease;
+      }
+
+      .video-next:hover {
+        transform: translateY(-50%) scale(1.05);
+        background: rgba(228, 162, 34, 0.3);
+      }
+
+      .video-prev {
+        position: absolute;
+        top: 50%;
+        left: 16px;
+        transform: translateY(-50%);
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        border: 1px solid rgba(255, 255, 255, 0.35);
+        background: rgba(0, 0, 0, 0.5);
+        color: #ffffff;
+        display: grid;
+        place-items: center;
+        cursor: pointer;
+        transition:
+          transform 0.2s ease,
+          background 0.2s ease;
+      }
+
+      .video-prev:hover {
+        transform: translateY(-50%) scale(1.05);
+        background: rgba(228, 162, 34, 0.3);
+      }
+
+      .video-thumbs {
+        margin-top: 18px;
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .video-thumb {
+        position: relative;
+        border-radius: 14px;
+        overflow: hidden;
+        background: #11181a;
+        aspect-ratio: 16 / 9;
+        border: 2px solid transparent;
+        cursor: pointer;
+        transition:
+          transform 0.2s ease,
+          border-color 0.2s ease;
+      }
+
+      .video-thumb video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .video-thumb.active {
+        border-color: #e4a222;
+        transform: translateY(-2px);
+      }
+
+      @media (max-width: 991px) {
+        .video-thumbs {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 575px) {
+        .video-thumbs {
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+          gap: 10px;
+        }
+
+        .video-thumb {
+          border-radius: 10px;
+        }
+
+        .video-main {
+          border-radius: 14px;
+        }
+      }
+
+      /* Poster Design */
+      .poster-section {
+        position: relative;
+        padding: 90px 24px 120px;
+        background: #0a0f10;
+        overflow: hidden;
+      }
+
+      .poster-section::before {
+        content: "";
+        position: absolute;
+        inset: -20% -10%;
+        background:
+          radial-gradient(
+            900px 700px at 15% 80%,
+            rgba(30, 70, 120, 0.5),
+            rgba(0, 0, 0, 0) 60%
+          ),
+          radial-gradient(
+            1000px 700px at 85% 20%,
+            rgba(220, 150, 40, 0.45),
+            rgba(0, 0, 0, 0) 60%
+          );
+        filter: blur(12px);
+        z-index: 0;
+      }
+
+      .poster-section .container {
+        position: relative;
+        z-index: 1;
+      }
+
+      .poster-title {
+        text-align: center;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        margin-bottom: 8px;
+        background: linear-gradient(120deg, #f2c44f, #3da5f4, #f2c44f);
+        background-size: 200% 100%;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        animation: aboutTitleGlow 6s ease-in-out infinite;
+      }
+
+      .poster-underline {
+        width: 140px;
+        height: 2px;
+        background: #f2c44f;
+        margin: 0 auto 50px;
+      }
+
+      .poster-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 32px;
+        align-items: end;
+      }
+
+      .poster-card {
+        border-radius: 18px;
+        background: #d9d9d9;
+        background-size: cover;
+        background-position: center;
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+      }
+
+      .poster-card.small {
+        height: 320px;
+      }
+
+      .poster-card.medium {
+        height: 420px;
+      }
+
+      .poster-card.large {
+        height: 480px;
+      }
+
+      .poster-card.small,
+      .poster-card.medium {
+        transition:
+          height 0.3s ease,
+          transform 0.3s ease;
+      }
+
+      .poster-card.small:hover,
+      .poster-card.medium:hover {
+        height: 480px;
+        transform: translateY(-6px);
+      }
+
+      /* Analytics Section */
+      .analytics-section {
+        position: relative;
+        padding: 100px 24px 120px;
+        background: #0a0f10;
+        overflow: hidden;
+      }
+
+      .analytics-section::before {
+        content: "";
+        position: absolute;
+        inset: -20% -10%;
+        background:
+          radial-gradient(
+            900px 700px at 10% 80%,
+            rgba(30, 70, 120, 0.35),
+            rgba(0, 0, 0, 0) 60%
+          ),
+          radial-gradient(
+            1000px 700px at 85% 20%,
+            rgba(220, 150, 40, 0.3),
+            rgba(0, 0, 0, 0) 60%
+          );
+        filter: blur(12px);
+        z-index: 0;
+      }
+
+      .analytics-section .container {
+        position: relative;
+        z-index: 1;
+      }
+
+      .analytics-title {
+        text-align: center;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        margin-bottom: 8px;
+        background: linear-gradient(120deg, #f2c44f, #3da5f4, #f2c44f);
+        background-size: 200% 100%;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        animation: aboutTitleGlow 6s ease-in-out infinite;
+      }
+
+      .analytics-subtitle {
+        text-align: center;
+        color: rgba(255, 255, 255, 0.7);
+        margin-bottom: 8px;
+      }
+
+      .analytics-underline {
+        width: 200px;
+        height: 2px;
+        background: #f2c44f;
+        margin: 0 auto 50px;
+      }
+
+      .analytics-metric {
+        text-align: center;
+        padding: 18px 12px;
+        border-radius: 14px;
+        background: rgba(12, 16, 20, 0.5);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: 0 14px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      @media (max-width: 991px) {
+        .analytics-metric {
+          height: 120px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+
+      .analytics-metric h2 {
+        font-weight: 700;
+        color: #f2c44f;
+        margin-bottom: 6px;
+      }
+
+      .analytics-metric p {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.75);
+      }
+
+      /* Instagram Story Section */
+      .story-section {
+        position: relative;
+        padding: 90px 24px 120px;
+        background: #0a0f10;
+        overflow: hidden;
+      }
+
+      .story-section::before {
+        content: "";
+        position: absolute;
+        inset: -20% -10%;
+        background:
+          radial-gradient(
+            900px 700px at 12% 75%,
+            rgba(30, 70, 120, 0.5),
+            rgba(0, 0, 0, 0) 60%
+          ),
+          radial-gradient(
+            1000px 700px at 85% 20%,
+            rgba(220, 150, 40, 0.45),
+            rgba(0, 0, 0, 0) 60%
+          );
+        filter: blur(12px);
+        z-index: 0;
+      }
+
+      .story-section .container {
+        position: relative;
+        z-index: 1;
+      }
+
+      .story-title {
+        text-align: center;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        margin-bottom: 8px;
+        background: linear-gradient(120deg, #f2c44f, #3da5f4, #f2c44f);
+        background-size: 200% 100%;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        animation: aboutTitleGlow 6s ease-in-out infinite;
+      }
+
+      .story-underline {
+        width: 360px;
+        height: 2px;
+        background: #f2c44f;
+        margin: 0 auto 50px;
+      }
+
+      .story-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 26px;
+      }
+
+      .story-card {
+        aspect-ratio: 9 / 16;
+        border-radius: 20px;
+        overflow: hidden;
+        background: #11181a;
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4);
+      }
+
+      .story-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      /* Snapshot Section */
+      .snapshot-section {
+        position: relative;
+        padding: 90px 0 120px;
+        background: #0a0f10;
+        overflow: hidden;
+      }
+
+      .snapshot-section::before {
+        content: "";
+        position: absolute;
+        inset: -20% -10%;
+        background: radial-gradient(
+            900px 600px at 15% 20%,
+            rgba(255, 166, 100, 0.3),
+            rgba(0, 0, 0, 0) 60%
+          ),
+          radial-gradient(
+            900px 600px at 85% 15%,
+            rgba(120, 200, 255, 0.28),
+            rgba(0, 0, 0, 0) 60%
+          ),
+          radial-gradient(
+            1000px 700px at 75% 80%,
+            rgba(255, 120, 200, 0.26),
+            rgba(0, 0, 0, 0) 60%
+          ),
+          radial-gradient(
+            900px 700px at 10% 85%,
+            rgba(90, 220, 170, 0.24),
+            rgba(0, 0, 0, 0) 60%
+          );
+        filter: blur(10px) saturate(1.2);
+        animation: videoGlow 20s ease-in-out infinite alternate;
+        z-index: 0;
+        pointer-events: none;
+      }
+
+      .snapshot-section::after {
+        content: "";
+        position: absolute;
+        inset: -20% -10%;
+        background: radial-gradient(
+          1200px 900px at 50% 50%,
+          rgba(0, 0, 0, 0.55),
+          rgba(0, 0, 0, 0.85)
+        );
+        mix-blend-mode: multiply;
+        animation: videoGlow 26s ease-in-out infinite alternate-reverse;
+        z-index: 0;
+        pointer-events: none;
+      }
+
+      .snapshot-section .container {
+        position: relative;
+        z-index: 1;
+      }
+
+      .snapshot-title {
+        text-align: center;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        margin-bottom: 8px;
+        background: linear-gradient(120deg, #f2c44f, #3da5f4, #f2c44f);
+        background-size: 200% 100%;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        animation: aboutTitleGlow 6s ease-in-out infinite;
+      }
+
+      .snapshot-underline {
+        width: 160px;
+        height: 2px;
+        background: #f2c44f;
+        margin: 0 auto 50px;
+      }
+
+      .snapshot-track {
+        display: flex;
+        gap: 18px;
+        width: max-content;
+        animation: snapshotScroll 90s linear infinite;
+      }
+
+      .snapshot-viewport {
+        overflow: hidden;
+        width: 100%;
+        position: relative;
+        z-index: 1;
+      }
+
+      .snapshot-viewport:hover .snapshot-track {
+        animation-play-state: paused;
+      }
+
+      .snapshot-item {
+        width: 180px;
+        aspect-ratio: 3 / 4;
+        border-radius: 14px;
+        background: #d9d9d9;
+        overflow: hidden;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+        cursor: pointer;
+        flex: 0 0 auto;
+      }
+
+      .snapshot-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      /* CONTACT SECTION */
+      .contact-section {
+        position: relative;
+        padding: 110px 0 120px;
+        background: #050505;
+        color: #e9e9e9;
+        text-align: center;
+      }
+
+      .contact-title {
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        margin-bottom: 8px;
+        background: linear-gradient(120deg, #f2c44f, #3da5f4, #f2c44f);
+        background-size: 200% 100%;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        animation: aboutTitleGlow 6s ease-in-out infinite;
+      }
+
+      .contact-underline {
+        width: 260px;
+        height: 2px;
+        background: #e4a222;
+        margin: 0 auto 48px;
+      }
+
+      .contact-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 36px;
+        align-items: start;
+      }
+
+      .contact-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 14px;
+      }
+
+      .contact-item:hover .contact-icon {
+        transform: translateY(-4px);
+        border-color: rgba(228, 162, 34, 0.6);
+        box-shadow: 0 10px 24px rgba(228, 162, 34, 0.2);
+      }
+
+      .contact-item:hover .contact-label {
+        color: #e4a222;
+      }
+
+      .contact-icon {
+        width: 70px;
+        height: 70px;
+        display: grid;
+        place-items: center;
+        border-radius: 18px;
+        border: 1px solid rgba(228, 162, 34, 0.3);
+        background: rgba(7, 7, 7, 0.6);
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease,
+          border-color 0.2s ease;
+      }
+
+      .contact-icon img {
+        width: 38px;
+        height: 38px;
+        object-fit: contain;
+      }
+
+      .contact-label {
+        font-weight: 600;
+        font-size: 1.05rem;
+      }
+
+      .contact-value {
+        color: #d0d0d0;
+        font-size: 0.95rem;
+        letter-spacing: 0.5px;
+      }
+
+      .contact-value a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .contact-value a:hover {
+        color: #e4a222;
+      }
+
+      @media (max-width: 991px) {
+        .contact-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 28px;
+        }
+      }
+
+      @media (max-width: 575px) {
+        .contact-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .site-footer {
+        background: #050505;
+        color: #9a9a9a;
+        text-align: center;
+        padding: 20px 0 30px;
+        font-size: 0.9rem;
+        letter-spacing: 0.4px;
+      }
+
+      .back-to-top {
+        position: fixed;
+        right: 20px;
+        bottom: 24px;
+        width: 48px;
+        height: 48px;
+        border: none;
+        background: transparent;
+        padding: 0;
+        cursor: pointer;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(10px);
+        transition:
+          opacity 0.2s ease,
+          transform 0.2s ease;
+        z-index: 10;
+      }
+
+      .back-to-top.show {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+      }
+
+      .back-to-top img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display: block;
+      }
+
+      @keyframes snapshotScroll {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-50%);
+        }
+      }
+
+      @media (max-width: 575px) {
+        .snapshot-item {
+          width: 140px;
+        }
+      }
+
+      @media (max-width: 991px) {
+        .story-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 575px) {
+        .story-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .analytics-card {
+        border-radius: 18px;
+        background: rgba(12, 16, 20, 0.5);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+        padding: 18px;
+      }
+
+      .analytics-card img {
+        width: 100%;
+        border-radius: 14px;
+        display: block;
+      }
+
+      .analytics-card img.analytics-small {
+        width: 85%;
+        margin: 0 auto;
+      }
+
+      .analytics-card h4 {
+        margin-top: 16px;
+        font-weight: 600;
+      }
+
+      .analytics-card p {
+        color: rgba(255, 255, 255, 0.75);
+        margin-bottom: 0;
+      }
+
+      .analytics-slideshow {
+        position: relative;
+        border-radius: 14px;
+        overflow: hidden;
+        cursor: pointer;
+      }
+
+      .analytics-slideshow img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0;
+        transition: opacity 1s ease;
+      }
+
+      .analytics-slideshow img.active {
+        opacity: 1;
+      }
+
+      .analytics-slideshow::before {
+        content: "";
+        display: block;
+        padding-top: 62.5%;
+      }
+
+      /* Image Lightbox */
+      .lightbox {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.85);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.2s ease;
+        z-index: 50;
+      }
+
+      .lightbox.show {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .lightbox-content {
+        position: relative;
+        max-width: min(900px, 90vw);
+        max-height: 80vh;
+      }
+
+      .lightbox-content img {
+        width: 100%;
+        height: auto;
+        max-height: 80vh;
+        border-radius: 14px;
+        display: block;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+      }
+
+      .lightbox-close,
+      .lightbox-prev,
+      .lightbox-next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        border: 1px solid rgba(255, 255, 255, 0.35);
+        background: rgba(0, 0, 0, 0.6);
+        color: #ffffff;
+        display: grid;
+        place-items: center;
+        cursor: pointer;
+        transition:
+          transform 0.2s ease,
+          background 0.2s ease;
+      }
+
+      .lightbox-prev {
+        left: -60px;
+      }
+
+      .lightbox-next {
+        right: -60px;
+      }
+
+      .lightbox-close {
+        top: -50px;
+        right: 0;
+        transform: none;
+      }
+
+      .lightbox-prev:hover,
+      .lightbox-next:hover,
+      .lightbox-close:hover {
+        background: rgba(228, 162, 34, 0.3);
+      }
+
+      @media (max-width: 575px) {
+        .lightbox-prev {
+          left: 8px;
+        }
+
+        .lightbox-next {
+          right: 8px;
+        }
+
+        .lightbox-close {
+          top: 8px;
+          right: 8px;
+        }
+      }
+
+      @media (max-width: 991px) {
+        .poster-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .poster-card.small,
+        .poster-card.medium,
+        .poster-card.large {
+          height: 360px;
+        }
+      }
+
+      @media (max-width: 767px) {
+        .subtitle {
+          letter-spacing: 4px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="hero">
+      <nav class="hero-nav">
+        <div class="navbar navbar-expand-lg navbar-dark">
+          <div class="container-fluid">
+            <button
+              class="navbar-toggler ms-auto"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#heroNav"
+              aria-controls="heroNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div
+              class="collapse navbar-collapse justify-content-center"
+              id="heroNav"
+            >
+              <ul class="navbar-nav gap-lg-3 text-center">
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#videos">Marketing Videos</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#case-study">Analytics</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#snapshot">Snapshot</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#contact">Contact</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <div class="hero-content">
+        <div class="logo">
+          <img
+            src="images/work/larasuka/larasukalogo.png"
+            alt="Lara Suka Coffee"
+          />
+        </div>
+        <div class="breadcrumb">
+          <a href="index.html">Home</a> / Sample Work /
+          <span class="highlight">Lara Suka</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="video-showcase" id="videos">
+      <div class="video-carousel">
+        <h2 class="video-title">MARKETING VIDEOS</h2>
+        <div class="video-underline"></div>
+        <div class="video-main">
+          <video
+            id="mainVideo"
+            src="videos/larasuka-1.mov"
+            controls
+            playsinline
+          ></video>
+          <button class="video-prev" id="videoPrev" aria-label="Previous video">
+            ◀
+          </button>
+          <button class="video-next" id="videoNext" aria-label="Next video">
+            ▶
+          </button>
+        </div>
+        <div class="video-thumbs" id="videoThumbs">
+          <div class="video-thumb active" data-src="videos/larasuka-1.mov">
+            <video src="videos/larasuka-1.mov" muted playsinline></video>
+          </div>
+          <div class="video-thumb" data-src="videos/larasuka-2.mov">
+            <video src="videos/larasuka-2.mov" muted playsinline></video>
+          </div>
+          <div class="video-thumb" data-src="videos/larasuka-3.mov">
+            <video src="videos/larasuka-3.mov" muted playsinline></video>
+          </div>
+          <div class="video-thumb" data-src="videos/larasuka-4.mov">
+            <video src="videos/larasuka-4.mov" muted playsinline></video>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="poster-section" id="poster">
+      <div class="container">
+        <h2 class="poster-title">POSTER DESIGN</h2>
+        <div class="poster-underline"></div>
+        <div class="poster-grid">
+          <div
+            class="poster-card small"
+            style="
+              background-image: url(&quot;images/work/larasuka/larasukaposter-1.png&quot;);
+            "
+            aria-label="Larasuka poster 1"
+          ></div>
+          <div
+            class="poster-card large"
+            style="
+              background-image: url(&quot;images/work/larasuka/larasukaposter-2.png&quot;);
+            "
+            aria-label="Larasuka poster 2"
+          ></div>
+          <div
+            class="poster-card medium"
+            style="
+              background-image: url(&quot;images/work/larasuka/larasukaposter-3.png&quot;);
+            "
+            aria-label="Larasuka poster 3"
+          ></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="analytics-section" id="case-study">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="analytics-title">ANALYTICS</h2>
+          <p class="analytics-subtitle">90-Day Digital Growth Campaign</p>
+          <div class="analytics-underline"></div>
+        </div>
+
+        <div class="row text-center mb-5 g-4">
+          <div class="col-md-3 col-6">
+            <div class="analytics-metric">
+              <h2>152K+</h2>
+              <p>Total Views</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="analytics-metric">
+              <h2>+167%</h2>
+              <p>Follower Growth</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="analytics-metric">
+              <h2>352</h2>
+              <p>Direction Requests</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="analytics-metric">
+              <h2>49K</h2>
+              <p>Post Views</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row align-items-center mb-5 g-4">
+          <div class="col-lg-6 order-lg-2">
+            <div class="analytics-card">
+              <div
+                class="analytics-slideshow"
+                id="googleBusinessSlider"
+                data-gallery="google"
+              >
+                <img
+                  src="images/work/larasuka/google-business-1.png"
+                  alt="Google Business result 1"
+                  class="active"
+                />
+                <img
+                  src="images/work/larasuka/google-business-2.png"
+                  alt="Google Business result 2"
+                />
+                <img
+                  src="images/work/larasuka/google-business-3.png"
+                  alt="Google Business result 3"
+                />
+                <img
+                  src="images/work/larasuka/google-business-4.png"
+                  alt="Google Business result 4"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 order-lg-1">
+            <div class="analytics-card">
+              <h4>Google Business Optimization</h4>
+              <p>
+                Improved local search visibility through profile SEO
+                optimization, consistent posting, and customer engagement —
+                resulting in 378 profile interactions and 352 direction
+                requests.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row align-items-center g-4">
+          <div class="col-lg-6">
+            <div class="analytics-card">
+              <div
+                class="analytics-slideshow"
+                id="instagramSlider"
+                data-gallery="instagram"
+              >
+                <img
+                  src="images/work/larasuka/instagram-growth-1.jpg"
+                  alt="Instagram growth 1"
+                  class="active"
+                />
+                <img
+                  src="images/work/larasuka/instagram-growth-2.jpg"
+                  alt="Instagram growth 2"
+                />
+                <img
+                  src="images/work/larasuka/instagram-growth-3.jpg"
+                  alt="Instagram growth 3"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="analytics-card">
+              <h4>Instagram Growth Strategy</h4>
+              <p>
+                Focused on event-driven content, storytelling through stories,
+                and community engagement tactics. Achieved 152,563 total views
+                and increased followers by 167% in 90 days.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row align-items-center mt-4 g-4">
+          <div class="col-lg-6 order-lg-2">
+            <div class="analytics-card">
+              <div
+                class="analytics-slideshow"
+                id="tiktokSlider"
+                data-gallery="tiktok"
+              >
+                <img
+                  src="images/work/larasuka/tiktok-1.PNG"
+                  alt="TikTok strategy 1"
+                  class="active"
+                />
+                <img
+                  src="images/work/larasuka/tiktok-2.PNG"
+                  alt="TikTok strategy 2"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 order-lg-1">
+            <div class="analytics-card">
+              <h4>TikTok Viral Content Strategy</h4>
+              <p>
+                Leveraged trend-driven content, viral hooks, and short-form
+                storytelling to increase discoverability on TikTok.
+              </p>
+              <p>
+                Achieved 49K+ video views, 2,600+ profile visits, and strong
+                engagement including 800+ shares and 2,200+ likes within the
+                campaign period.
+              </p>
+              <p class="mb-0">
+                Content spikes demonstrate successful alignment with TikTok’s
+                algorithm and audience behavior.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="story-section" id="stories">
+      <div class="container">
+        <h2 class="story-title">INSTAGRAM STORY PROMOTIONAL CONTENT</h2>
+        <div class="story-underline"></div>
+        <div class="story-grid">
+          <div class="story-card">
+            <img
+              src="images/work/larasuka/story-1.png"
+              alt="Instagram story 1"
+            />
+          </div>
+          <div class="story-card">
+            <img
+              src="images/work/larasuka/story-2.png"
+              alt="Instagram story 2"
+            />
+          </div>
+          <div class="story-card">
+            <img
+              src="images/work/larasuka/story-3.png"
+              alt="Instagram story 3"
+            />
+          </div>
+          <div class="story-card">
+            <img
+              src="images/work/larasuka/story-4.png"
+              alt="Instagram story 4"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="snapshot-section" id="snapshot">
+      <div class="container">
+        <h2 class="snapshot-title">SNAPSHOT</h2>
+        <div class="snapshot-underline"></div>
+      </div>
+      <div class="snapshot-viewport">
+        <div class="snapshot-track" id="snapshotTrack"></div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="container">
+        <h2 class="contact-title">GET IN TOUCH</h2>
+        <div class="contact-underline"></div>
+        <div class="contact-grid">
+          <div class="contact-item">
+            <a class="contact-icon" href="tel:+60128550706">
+              <img src="images/phone.png" alt="Phone icon" />
+            </a>
+            <div class="contact-label">Phone & Mobile</div>
+            <div class="contact-value">
+              <a href="tel:+60128550706">+60128550706</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <a class="contact-icon" href="mailto:irfanrizal.dgm@gmail.com">
+              <img src="images/email.png" alt="Email icon" />
+            </a>
+            <div class="contact-label">G-mail & Website</div>
+            <div class="contact-value">
+              <a href="mailto:irfanrizal.dgm@gmail.com">
+                irfanrizal.dgm@gmail.com
+              </a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <a
+              class="contact-icon"
+              href="https://maps.google.com/?q=Shah+Alam,+Selangor"
+            >
+              <img src="images/address.png" alt="Address icon" />
+            </a>
+            <div class="contact-label">Address</div>
+            <div class="contact-value">Shah Alam, Selangor</div>
+          </div>
+          <div class="contact-item">
+            <a
+              class="contact-icon"
+              href="https://www.linkedin.com/in/muhamad-irfan-r-1a46542b6/"
+            >
+              <img src="images/linkedin.png" alt="LinkedIn icon" />
+            </a>
+            <div class="contact-label">LinkedIn</div>
+            <div class="contact-value">
+              <a href="https://www.linkedin.com/in/muhamad-irfan-r-1a46542b6/"
+                >Muhamad Irfan R</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="container">
+        © 2026 Irfan Portfolio. All rights reserved. Website Design & Developed
+        by Manwest
+      </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+      <img src="images/backtotop.png" alt="Back to top" />
+    </button>
+
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <div class="lightbox-content">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Close">
+          ✕
+        </button>
+        <button class="lightbox-prev" id="lightboxPrev" aria-label="Previous">
+          ◀
+        </button>
+        <img id="lightboxImage" src="" alt="Expanded view" />
+        <button class="lightbox-next" id="lightboxNext" aria-label="Next">
+          ▶
+        </button>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      (function () {
+        const mainVideo = document.getElementById("mainVideo");
+        const thumbs = Array.from(document.querySelectorAll(".video-thumb"));
+        const nextButton = document.getElementById("videoNext");
+        const prevButton = document.getElementById("videoPrev");
+        if (!mainVideo || thumbs.length === 0 || !nextButton || !prevButton) {
+          return;
+        }
+
+        let activeIndex = 0;
+
+        const setActive = (index) => {
+          activeIndex = index;
+          const src = thumbs[index].dataset.src;
+          if (src) {
+            mainVideo.src = src;
+            mainVideo.play().catch(() => {});
+          }
+          thumbs.forEach((thumb, i) => {
+            thumb.classList.toggle("active", i === index);
+          });
+        };
+
+        thumbs.forEach((thumb, index) => {
+          thumb.addEventListener("click", () => setActive(index));
+        });
+
+        nextButton.addEventListener("click", () => {
+          const nextIndex = (activeIndex + 1) % thumbs.length;
+          setActive(nextIndex);
+        });
+
+        prevButton.addEventListener("click", () => {
+          const prevIndex = (activeIndex - 1 + thumbs.length) % thumbs.length;
+          setActive(prevIndex);
+        });
+      })();
+
+      (function () {
+        const slider = document.getElementById("googleBusinessSlider");
+        if (!slider) return;
+        const slides = Array.from(slider.querySelectorAll("img"));
+        if (slides.length <= 1) return;
+
+        let current = 0;
+        const showSlide = (index) => {
+          slides.forEach((slide, i) => {
+            slide.classList.toggle("active", i === index);
+          });
+        };
+
+        setInterval(() => {
+          current = (current + 1) % slides.length;
+          showSlide(current);
+        }, 3500);
+      })();
+
+      (function () {
+        const slider = document.getElementById("instagramSlider");
+        if (!slider) return;
+        const slides = Array.from(slider.querySelectorAll("img"));
+        if (slides.length <= 1) return;
+
+        let current = 0;
+        const showSlide = (index) => {
+          slides.forEach((slide, i) => {
+            slide.classList.toggle("active", i === index);
+          });
+        };
+
+        setInterval(() => {
+          current = (current + 1) % slides.length;
+          showSlide(current);
+        }, 3500);
+      })();
+
+      (function () {
+        const slider = document.getElementById("tiktokSlider");
+        if (!slider) return;
+        const slides = Array.from(slider.querySelectorAll("img"));
+        if (slides.length <= 1) return;
+
+        let current = 0;
+        const showSlide = (index) => {
+          slides.forEach((slide, i) => {
+            slide.classList.toggle("active", i === index);
+          });
+        };
+
+        setInterval(() => {
+          current = (current + 1) % slides.length;
+          showSlide(current);
+        }, 3500);
+      })();
+
+      // Back to top button
+      const backToTopButton = document.getElementById("backToTop");
+      if (backToTopButton) {
+        const toggleBackToTop = () => {
+          if (window.scrollY > 400) {
+            backToTopButton.classList.add("show");
+          } else {
+            backToTopButton.classList.remove("show");
+          }
+        };
+
+        backToTopButton.addEventListener("click", () => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+
+        window.addEventListener("scroll", toggleBackToTop);
+        toggleBackToTop();
+      }
+
+      (function () {
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImage = document.getElementById("lightboxImage");
+        const lightboxPrev = document.getElementById("lightboxPrev");
+        const lightboxNext = document.getElementById("lightboxNext");
+        const lightboxClose = document.getElementById("lightboxClose");
+        if (!lightbox || !lightboxImage) return;
+
+        const galleries = {
+          google: [
+            "images/work/larasuka/google-business-1.png",
+            "images/work/larasuka/google-business-2.png",
+            "images/work/larasuka/google-business-3.png",
+            "images/work/larasuka/google-business-4.png",
+          ],
+          instagram: [
+            "images/work/larasuka/instagram-growth-1.jpg",
+            "images/work/larasuka/instagram-growth-2.jpg",
+            "images/work/larasuka/instagram-growth-3.jpg",
+          ],
+          tiktok: [
+            "images/work/larasuka/tiktok-1.PNG",
+            "images/work/larasuka/tiktok-2.PNG",
+          ],
+          snapshot: Array.from({ length: 20 }, (_, i) => {
+            const index = i + 1;
+            return `images/work/larasuka/snap-${index}.jpg`;
+          }),
+        };
+
+        let activeGallery = null;
+        let activeIndex = 0;
+
+        const openLightbox = (gallery, index) => {
+          activeGallery = gallery;
+          activeIndex = index;
+          lightboxImage.src = galleries[gallery][index];
+          lightbox.classList.add("show");
+          lightbox.setAttribute("aria-hidden", "false");
+        };
+
+        const closeLightbox = () => {
+          lightbox.classList.remove("show");
+          lightbox.setAttribute("aria-hidden", "true");
+        };
+
+        const showNext = (direction) => {
+          if (!activeGallery) return;
+          const items = galleries[activeGallery];
+          activeIndex = (activeIndex + direction + items.length) % items.length;
+          lightboxImage.src = items[activeIndex];
+        };
+
+        document.querySelectorAll(".analytics-slideshow").forEach((slider) => {
+          const gallery = slider.dataset.gallery;
+          const images = Array.from(slider.querySelectorAll("img"));
+          slider.addEventListener("click", () => {
+            const current = images.findIndex((img) =>
+              img.classList.contains("active"),
+            );
+            openLightbox(gallery, Math.max(current, 0));
+          });
+        });
+
+        const snapshotTrack = document.getElementById("snapshotTrack");
+        if (snapshotTrack) {
+          const items = galleries.snapshot;
+          const buildItems = (list) =>
+            list
+              .map(
+                (src, idx) => `
+                <div class="snapshot-item" data-index="${idx}">
+                  <img src="${src}" alt="Snapshot ${idx + 1}" />
+                </div>`,
+              )
+              .join("");
+
+          snapshotTrack.innerHTML = buildItems(items) + buildItems(items);
+          snapshotTrack.querySelectorAll(".snapshot-item").forEach((item) => {
+            const index = Number(item.dataset.index) || 0;
+            item.addEventListener("click", () => {
+              openLightbox("snapshot", index);
+            });
+          });
+        }
+
+        lightboxPrev?.addEventListener("click", () => showNext(-1));
+        lightboxNext?.addEventListener("click", () => showNext(1));
+        lightboxClose?.addEventListener("click", closeLightbox);
+        lightbox.addEventListener("click", (event) => {
+          if (event.target === lightbox) closeLightbox();
+        });
+        document.addEventListener("keydown", (event) => {
+          if (!lightbox.classList.contains("show")) return;
+          if (event.key === "Escape") closeLightbox();
+          if (event.key === "ArrowRight") showNext(1);
+          if (event.key === "ArrowLeft") showNext(-1);
+        });
+      })();
+    </script>
+  </body>
+</html>

@@ -33,6 +33,12 @@
         overflow: hidden;
       }
 
+      /* Hero mouse parallax */
+      .hero-section {
+        background-position: center;
+        transition: background-position 0.2s ease;
+      }
+
       /* Overlay */
       .hero-section::before {
         content: "";
@@ -118,6 +124,17 @@
 
         .navbar-nav .nav-link {
           padding: 10px 0;
+        }
+      }
+
+      /* Desktop dropdown hover */
+      @media (min-width: 992px) {
+        .navbar .dropdown:hover .dropdown-menu {
+          display: block;
+        }
+
+        .navbar .dropdown-menu {
+          margin-top: 0;
         }
       }
 
@@ -968,8 +985,32 @@
               <li class="nav-item">
                 <a class="nav-link" href="#experience">EXPERIENCE</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#work">SAMPLE WORK</a>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#work"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  SAMPLE WORK
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                  <li>
+                    <a class="dropdown-item" href="larasuka.html">
+                      LARA SUKA
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="pkns.html">PKNS</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="kilig.html">KILIG</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="csmt.html">CSMT.MY</a>
+                  </li>
+                </ul>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#contact">CONTACT</a>
@@ -1152,7 +1193,7 @@
             <img src="images/work-larasuka.png" alt="Larasuka Coffee" />
             <div class="work-overlay">
               <h3>LARASUKA COFFEE</h3>
-              <a class="work-cta" href="#">View More</a>
+              <a class="work-cta" href="larasuka.html">View More</a>
             </div>
           </div>
           <div class="work-card">
@@ -1297,6 +1338,19 @@
         }
       });
 
+      // Desktop: clicking "Sample Work" should anchor to section
+      const sampleWorkLink = document.querySelector(
+        ".navbar .dropdown > .nav-link"
+      );
+      if (sampleWorkLink) {
+        sampleWorkLink.addEventListener("click", (event) => {
+          if (window.innerWidth >= 992) {
+            event.preventDefault();
+            window.location.hash = "work";
+          }
+        });
+      }
+
       // Align experience timeline line to first/last dots
       const updateTimelineLine = () => {
         const timeline = document.querySelector(".experience-timeline");
@@ -1336,6 +1390,28 @@
         window.addEventListener("scroll", toggleBackToTop);
         toggleBackToTop();
       }
+
+      // Hero mouse parallax
+      (function () {
+        const hero = document.querySelector(".hero-section");
+        if (!hero) return;
+
+        const onMove = (event) => {
+          const rect = hero.getBoundingClientRect();
+          const x = (event.clientX - rect.left) / rect.width - 0.5;
+          const y = (event.clientY - rect.top) / rect.height - 0.5;
+          const moveX = Math.round(x * 12);
+          const moveY = Math.round(y * 12);
+          hero.style.backgroundPosition = `${50 + moveX}% ${50 + moveY}%`;
+        };
+
+        const onLeave = () => {
+          hero.style.backgroundPosition = "50% 50%";
+        };
+
+        hero.addEventListener("mousemove", onMove);
+        hero.addEventListener("mouseleave", onLeave);
+      })();
     </script>
   </body>
 </html>
