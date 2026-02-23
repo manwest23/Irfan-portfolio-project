@@ -66,6 +66,16 @@
         color: #f2c44f;
       }
 
+      @media (min-width: 992px) {
+        .hero-nav .dropdown:hover .dropdown-menu {
+          display: block;
+        }
+
+        .hero-nav .dropdown-menu {
+          margin-top: 0;
+        }
+      }
+
       .hero-nav .navbar {
         padding: 0;
       }
@@ -1130,6 +1140,35 @@
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#snapshot">Snapshot</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="index.html#work"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Sample Work
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-dark">
+                    <li>
+                      <a class="dropdown-item" href="work/larasuka.html">
+                        LARA SUKA
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="work/pkns.html">PKNS</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="work/kilig.html">KILIG</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="work/csmt.html">
+                        CSMT.MY
+                      </a>
+                    </li>
+                  </ul>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#contact">Contact</a>
