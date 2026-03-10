@@ -1,0 +1,1449 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>PKNS | Sample Work</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        color-scheme: light;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Montserrat", sans-serif;
+        background: #f4f5f7;
+        color: #1b1b1b;
+      }
+
+      .hero {
+        position: relative;
+        min-height: 30vh;
+        background: url("images/work/pkns/pknshero.png") center center/cover
+          no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 120px 24px 80px;
+      }
+
+      .hero-nav {
+        position: absolute;
+        top: 18px;
+        left: 0;
+        right: 0;
+        z-index: 2;
+      }
+
+      .hero-nav .navbar {
+        padding: 0;
+      }
+
+      .hero-nav .nav-link {
+        color: #111111;
+        text-decoration: none;
+        font-weight: 600;
+        letter-spacing: 0.8px;
+        text-transform: uppercase;
+        font-size: 0.95rem;
+        transition: color 0.2s ease;
+      }
+
+      .hero-nav .nav-link:hover {
+        color: #d8191f;
+      }
+
+      @media (min-width: 992px) {
+        .hero-nav .dropdown:hover .dropdown-menu {
+          display: block;
+        }
+
+        .hero-nav .dropdown-menu {
+          margin-top: 0;
+        }
+      }
+
+      .hero-nav .navbar-toggler {
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        padding: 6px 10px;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      @media (min-width: 992px) {
+        .hero-nav .container-fluid {
+          justify-content: center !important;
+        }
+      }
+
+      @media (max-width: 991px) {
+        .hero-nav {
+          right: 16px;
+          left: 16px;
+        }
+
+        .hero-nav .container-fluid {
+          position: relative;
+          justify-content: flex-end !important;
+        }
+
+        .hero-nav .navbar-collapse {
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 100%;
+          width: 100%;
+          margin-top: 12px;
+          padding: 14px 18px;
+          border-radius: 14px;
+          background: rgba(255, 255, 255, 0.95);
+          backdrop-filter: blur(8px);
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18);
+          transition:
+            transform 0.25s ease,
+            opacity 0.25s ease;
+        }
+
+        .hero-nav .navbar-collapse.collapse {
+          transform: translateY(-8px);
+          opacity: 0;
+        }
+
+        .hero-nav .navbar-collapse.collapsing {
+          transform: translateY(-8px);
+          opacity: 0;
+        }
+
+        .hero-nav .navbar-collapse.show {
+          transform: translateY(0);
+          opacity: 1;
+        }
+
+        .hero-nav .navbar-nav .nav-link {
+          padding: 10px 0;
+          text-align: center;
+        }
+      }
+
+      .hero-nav .dropdown-menu {
+        border-radius: 12px;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        box-shadow: 0 18px 35px rgba(0, 0, 0, 0.15);
+      }
+
+      .hero-nav .dropdown-item {
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+      }
+
+      .hero-content {
+        text-align: center;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .logo {
+        width: min(320px, 70vw);
+        display: inline-block;
+      }
+
+      .logo img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .breadcrumb {
+        margin-top: 6px;
+        font-size: 0.95rem;
+        color: rgba(0, 0, 0, 0.7);
+        text-align: center;
+        width: 100%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .breadcrumb .highlight {
+        color: #d8191f;
+        font-weight: 600;
+      }
+
+      .breadcrumb a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .breadcrumb a:hover {
+        color: #d8191f;
+      }
+
+      @media (max-width: 767px) {
+        .breadcrumb {
+          font-size: 0.9rem;
+        }
+      }
+
+      .analytics-section {
+        position: relative;
+        padding: 100px 24px 120px;
+        background: #ffffff;
+        overflow: hidden;
+        color: #1b1b1b;
+      }
+
+      .analytics-section::before {
+        content: "";
+        position: absolute;
+        inset: -20% -10%;
+        background:
+          radial-gradient(
+            900px 700px at 10% 80%,
+            rgba(30, 70, 120, 0.12),
+            rgba(0, 0, 0, 0) 60%
+          ),
+          radial-gradient(
+            1000px 700px at 85% 20%,
+            rgba(220, 150, 40, 0.16),
+            rgba(0, 0, 0, 0) 60%
+          );
+        filter: blur(12px);
+        z-index: 0;
+      }
+
+      .analytics-section .container {
+        position: relative;
+        z-index: 1;
+      }
+
+      .analytics-title {
+        text-align: center;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        margin-bottom: 8px;
+        background: linear-gradient(120deg, #f2c44f, #3da5f4, #f2c44f);
+        background-size: 200% 100%;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        animation: aboutTitleGlow 6s ease-in-out infinite;
+      }
+
+      .analytics-subtitle {
+        text-align: center;
+        color: rgba(0, 0, 0, 0.6);
+        margin-bottom: 8px;
+      }
+
+      .analytics-underline {
+        width: 200px;
+        height: 2px;
+        background: #d8191f;
+        margin: 0 auto 50px;
+      }
+
+      .analytics-metric {
+        text-align: center;
+        padding: 18px 12px;
+        border-radius: 14px;
+        background: #f7f7f9;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
+      }
+
+      @media (max-width: 991px) {
+        .analytics-metric {
+          height: 120px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+
+      .analytics-metric h2 {
+        font-weight: 700;
+        color: #d8191f;
+        margin-bottom: 6px;
+      }
+
+      .analytics-metric p {
+        margin: 0;
+        color: rgba(0, 0, 0, 0.65);
+      }
+
+      .analytics-card {
+        border-radius: 18px;
+        background: #ffffff;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        padding: 28px;
+        box-shadow: 0 18px 40px rgba(16, 24, 40, 0.12);
+        height: 100%;
+      }
+
+      .analytics-card h4 {
+        font-weight: 600;
+        margin-bottom: 12px;
+      }
+
+      .analytics-card p {
+        color: rgba(0, 0, 0, 0.7);
+        margin-bottom: 12px;
+      }
+
+      .tiktok-link {
+        margin-top: 18px;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 18px;
+        border-radius: 999px;
+        border: 1px solid rgba(0, 0, 0, 0.12);
+        background: #ffffff;
+        color: #111111;
+        text-decoration: none;
+        font-weight: 600;
+        letter-spacing: 0.4px;
+        box-shadow: 0 10px 24px rgba(16, 24, 40, 0.12);
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease,
+          border-color 0.2s ease;
+      }
+
+      .tiktok-link:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 16px 30px rgba(16, 24, 40, 0.16);
+        border-color: rgba(216, 25, 31, 0.6);
+      }
+
+      .tiktok-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #d8191f;
+        box-shadow: 0 0 0 6px rgba(216, 25, 31, 0.15);
+      }
+
+      .analytics-snapshot {
+        margin-top: 40px;
+        margin-bottom: 40px;
+      }
+
+      .analytics-snapshot-viewport {
+        overflow: hidden;
+        width: 100%;
+        position: relative;
+      }
+
+      .analytics-snapshot-track {
+        display: flex;
+        gap: 16px;
+        width: max-content;
+        animation: analyticsScroll 75s linear infinite;
+      }
+
+      .analytics-snapshot-viewport:hover .analytics-snapshot-track {
+        animation-play-state: paused;
+      }
+
+      .analytics-snapshot-item {
+        width: 180px;
+        aspect-ratio: 3 / 4;
+        border-radius: 14px;
+        background: #f0f2f5;
+        overflow: hidden;
+        box-shadow: 0 12px 28px rgba(16, 24, 40, 0.18);
+        flex: 0 0 auto;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+      }
+
+      .analytics-snapshot-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      @keyframes analyticsScroll {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+
+      .copywriting-section {
+        padding: 90px 24px 110px;
+        background: #f7f7f9;
+      }
+
+      .copywriting-section .container {
+        max-width: 1100px;
+      }
+
+      .copywriting-title {
+        text-align: center;
+        font-weight: 700;
+        letter-spacing: 1.6px;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+      }
+
+      .copywriting-underline {
+        width: 180px;
+        height: 2px;
+        background: #d8191f;
+        margin: 0 auto 40px;
+      }
+
+      .copywriting-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 24px;
+      }
+
+      .copywriting-card {
+        border-radius: 18px;
+        overflow: hidden;
+        background: #ffffff;
+        box-shadow: 0 18px 40px rgba(16, 24, 40, 0.12);
+        transition:
+          transform 0.25s ease,
+          box-shadow 0.25s ease;
+      }
+
+      .copywriting-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 24px 50px rgba(16, 24, 40, 0.18);
+      }
+
+      .copywriting-card img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      @media (max-width: 991px) {
+        .copywriting-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 575px) {
+        .copywriting-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .video-section {
+        padding: 90px 24px 110px;
+        background: #ffffff;
+      }
+
+      .video-section .container {
+        max-width: 960px;
+      }
+
+      .video-title {
+        text-align: center;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        margin-bottom: 8px;
+        background: linear-gradient(120deg, #f2c44f, #3da5f4, #f2c44f);
+        background-size: 200% 100%;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        animation: aboutTitleGlow 6s ease-in-out infinite;
+      }
+
+      .video-underline {
+        width: 220px;
+        height: 2px;
+        background: #e4a222;
+        margin: 0 auto 36px;
+      }
+
+      .video-frame {
+        position: relative;
+        border-radius: 18px;
+        overflow: hidden;
+        background: #11181a;
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.2);
+        aspect-ratio: 16 / 9;
+      }
+
+      .video-frame video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      @keyframes aboutTitleGlow {
+        0% {
+          background-position: 0% 50%;
+        }
+        100% {
+          background-position: 100% 50%;
+        }
+      }
+
+      .poster-section {
+        padding: 90px 24px 110px;
+        background: linear-gradient(
+          135deg,
+          #ffffff 0%,
+          #f4f5f8 55%,
+          #ffffff 100%
+        );
+      }
+
+      .poster-section .container {
+        max-width: 1100px;
+      }
+
+      .poster-title {
+        text-align: center;
+        font-weight: 700;
+        letter-spacing: 1.6px;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+      }
+
+      .poster-underline {
+        width: 200px;
+        height: 2px;
+        background: #d8191f;
+        margin: 0 auto 40px;
+      }
+
+      .poster-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        grid-auto-rows: 190px;
+        gap: 20px;
+        grid-template-areas:
+          "sq1 sq2 land land"
+          "sq3 sq4 port1 port2";
+      }
+
+      .poster-card {
+        position: relative;
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow: 0 18px 40px rgba(16, 24, 40, 0.18);
+        transform: translateZ(0);
+        transition:
+          transform 0.25s ease,
+          box-shadow 0.25s ease;
+        cursor: pointer;
+      }
+
+      .poster-card::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0),
+          rgba(0, 0, 0, 0.08)
+        );
+        opacity: 0;
+        transition: opacity 0.25s ease;
+      }
+
+      .poster-card:hover {
+        transform: translateY(-6px) scale(1.01);
+        box-shadow: 0 24px 50px rgba(16, 24, 40, 0.22);
+      }
+
+      .poster-card:hover::after {
+        opacity: 1;
+      }
+
+      .poster-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .poster-card.square {
+        grid-column: span 1;
+        grid-row: span 1;
+      }
+
+      .poster-card.landscape {
+        grid-column: span 2;
+        grid-row: span 1;
+      }
+
+      .poster-card.portrait {
+        grid-column: span 1;
+        grid-row: span 1;
+      }
+
+      .poster-card.area-sq1 {
+        grid-area: sq1;
+      }
+
+      .poster-card.area-sq2 {
+        grid-area: sq2;
+      }
+
+      .poster-card.area-sq3 {
+        grid-area: sq3;
+      }
+
+      .poster-card.area-sq4 {
+        grid-area: sq4;
+      }
+
+      .poster-card.area-land {
+        grid-area: land;
+      }
+
+      .poster-card.area-port1 {
+        grid-area: port1;
+      }
+
+      .poster-card.area-port2 {
+        grid-area: port2;
+      }
+
+      @media (max-width: 991px) {
+        .poster-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          grid-auto-rows: 170px;
+          grid-template-areas:
+            "sq1 sq2"
+            "land land"
+            "sq3 sq4"
+            "port1 port2";
+        }
+
+        .poster-card.landscape {
+          grid-column: span 2;
+        }
+
+        .poster-card.portrait {
+          grid-row: span 1;
+        }
+      }
+
+      @media (max-width: 575px) {
+        .poster-grid {
+          grid-template-columns: 1fr;
+          grid-auto-rows: auto;
+          grid-template-areas:
+            "sq1"
+            "sq2"
+            "land"
+            "sq3"
+            "sq4"
+            "port1"
+            "port2";
+        }
+
+        .poster-card {
+          aspect-ratio: 4 / 5;
+        }
+
+        .poster-card.landscape {
+          aspect-ratio: 16 / 9;
+        }
+
+        .poster-card.square {
+          aspect-ratio: 1 / 1;
+        }
+      }
+
+      .lightbox {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.85);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.2s ease;
+        z-index: 50;
+      }
+
+      .lightbox.show {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .lightbox-content {
+        position: relative;
+        max-width: min(900px, 90vw);
+        max-height: 80vh;
+      }
+
+      .lightbox-content img {
+        width: 100%;
+        height: auto;
+        max-height: 80vh;
+        border-radius: 14px;
+        display: block;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+      }
+
+      .lightbox-close,
+      .lightbox-prev,
+      .lightbox-next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        border: 1px solid rgba(255, 255, 255, 0.35);
+        background: rgba(0, 0, 0, 0.6);
+        color: #ffffff;
+        display: grid;
+        place-items: center;
+        cursor: pointer;
+        transition:
+          transform 0.2s ease,
+          background 0.2s ease;
+      }
+
+      .lightbox-prev {
+        left: -60px;
+      }
+
+      .lightbox-next {
+        right: -60px;
+      }
+
+      .lightbox-close {
+        top: -50px;
+        right: 0;
+        transform: none;
+      }
+
+      .lightbox-prev:hover,
+      .lightbox-next:hover,
+      .lightbox-close:hover {
+        background: rgba(228, 162, 34, 0.3);
+      }
+
+      @media (max-width: 575px) {
+        .lightbox-prev {
+          left: 8px;
+        }
+
+        .lightbox-next {
+          right: 8px;
+        }
+
+        .lightbox-close {
+          top: 8px;
+          right: 8px;
+        }
+      }
+
+      .contact-section {
+        position: relative;
+        padding: 110px 0 120px;
+        background: #050505;
+        color: #e9e9e9;
+        text-align: center;
+      }
+
+      .contact-title {
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        margin-bottom: 8px;
+        background: linear-gradient(120deg, #f2c44f, #3da5f4, #f2c44f);
+        background-size: 200% 100%;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        animation: aboutTitleGlow 6s ease-in-out infinite;
+      }
+
+      .contact-underline {
+        width: 260px;
+        height: 2px;
+        background: #e4a222;
+        margin: 0 auto 48px;
+      }
+
+      .contact-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 36px;
+        align-items: start;
+      }
+
+      .contact-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 14px;
+      }
+
+      .contact-item:hover .contact-icon {
+        transform: translateY(-4px);
+        border-color: rgba(228, 162, 34, 0.6);
+        box-shadow: 0 10px 24px rgba(228, 162, 34, 0.2);
+      }
+
+      .contact-item:hover .contact-label {
+        color: #e4a222;
+      }
+
+      .contact-icon {
+        width: 70px;
+        height: 70px;
+        display: grid;
+        place-items: center;
+        border-radius: 18px;
+        border: 1px solid rgba(228, 162, 34, 0.3);
+        background: rgba(7, 7, 7, 0.6);
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease,
+          border-color 0.2s ease;
+      }
+
+      .contact-icon img {
+        width: 38px;
+        height: 38px;
+        object-fit: contain;
+      }
+
+      .contact-label {
+        font-weight: 600;
+        font-size: 1.05rem;
+      }
+
+      .contact-value {
+        color: #d0d0d0;
+        font-size: 0.95rem;
+        letter-spacing: 0.5px;
+      }
+
+      .contact-value a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .contact-value a:hover {
+        color: #e4a222;
+      }
+
+      @media (max-width: 991px) {
+        .contact-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 28px;
+        }
+      }
+
+      @media (max-width: 575px) {
+        .contact-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .site-footer {
+        background: #050505;
+        color: #9a9a9a;
+        text-align: center;
+        padding: 20px 0 30px;
+        font-size: 0.9rem;
+        letter-spacing: 0.4px;
+      }
+
+      .back-to-top {
+        position: fixed;
+        right: 20px;
+        bottom: 24px;
+        width: 48px;
+        height: 48px;
+        border: none;
+        background: transparent;
+        padding: 0;
+        cursor: pointer;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(10px);
+        transition:
+          opacity 0.2s ease,
+          transform 0.2s ease;
+        z-index: 10;
+      }
+
+      .back-to-top.show {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+      }
+
+      .back-to-top img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="hero">
+      <nav class="hero-nav navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#heroNav"
+            aria-controls="heroNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="heroNav">
+            <ul class="navbar-nav gap-lg-4 mx-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#videos">Video Marketing</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#posters">Posters</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#analytics">Analytics</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#copywriting">Copywriting</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="index.html#work"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Sample Work
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="larasuka.html">
+                      LARASUKA COFFEE
+                    </a>
+                  </li>
+                  <li><a class="dropdown-item" href="pkns.html">PKNS</a></li>
+                  <li><a class="dropdown-item" href="kilig.html">KILIG</a></li>
+                  <li>
+                    <a class="dropdown-item" href="csmt.html"> CSMT.MY </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contact">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <div class="hero-content">
+        <div class="logo">
+          <img src="images/work/pkns/pknslogo.png" alt="PKNS" />
+        </div>
+        <div class="breadcrumb">
+          <a href="index.html">Home</a> /
+          <a href="index.html#sample-work">Sample Work</a> /
+          <span class="highlight">PKNS</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="video-section" id="videos">
+      <div class="container">
+        <h2 class="video-title">VIDEO MARKETING</h2>
+        <div class="video-underline"></div>
+        <div class="video-frame">
+          <video src="videos/pkns-video.mov" controls playsinline></video>
+        </div>
+      </div>
+    </section>
+
+    <section class="poster-section" id="posters">
+      <div class="container">
+        <h2 class="poster-title">Poster Design</h2>
+        <div class="poster-underline"></div>
+        <div class="poster-grid">
+          <button
+            class="poster-card square area-sq1 border-0 p-0 bg-transparent"
+            type="button"
+            data-index="0"
+          >
+            <img src="images/work/pkns/pknsposter-1.png" alt="PKNS poster 1" />
+          </button>
+          <button
+            class="poster-card square area-sq2 border-0 p-0 bg-transparent"
+            type="button"
+            data-index="1"
+          >
+            <img src="images/work/pkns/pknsposter-2.png" alt="PKNS poster 2" />
+          </button>
+          <button
+            class="poster-card landscape area-land border-0 p-0 bg-transparent"
+            type="button"
+            data-index="4"
+          >
+            <img src="images/work/pkns/pknsposter-5.png" alt="PKNS poster 5" />
+          </button>
+          <button
+            class="poster-card square area-sq3 border-0 p-0 bg-transparent"
+            type="button"
+            data-index="2"
+          >
+            <img src="images/work/pkns/pknsposter-3.png" alt="PKNS poster 3" />
+          </button>
+          <button
+            class="poster-card square area-sq4 border-0 p-0 bg-transparent"
+            type="button"
+            data-index="3"
+          >
+            <img src="images/work/pkns/pknsposter-4.png" alt="PKNS poster 4" />
+          </button>
+          <button
+            class="poster-card portrait area-port1 border-0 p-0 bg-transparent"
+            type="button"
+            data-index="5"
+          >
+            <img src="images/work/pkns/pknsposter-6.png" alt="PKNS poster 6" />
+          </button>
+          <button
+            class="poster-card portrait area-port2 border-0 p-0 bg-transparent"
+            type="button"
+            data-index="6"
+          >
+            <img src="images/work/pkns/pknsposter-7.png" alt="PKNS poster 7" />
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="analytics-section" id="analytics">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="analytics-title">ANALYTICS</h2>
+          <p class="analytics-subtitle">TikTok Performance Snapshot</p>
+          <div class="analytics-underline"></div>
+        </div>
+
+        <div class="row text-center mb-5 g-4">
+          <div class="col-md-3 col-6">
+            <div class="analytics-metric">
+              <h2>49K+</h2>
+              <p>Video Views</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="analytics-metric">
+              <h2>2,600+</h2>
+              <p>Profile Visits</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="analytics-metric">
+              <h2>2,200+</h2>
+              <p>Likes</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="analytics-metric">
+              <h2>800+</h2>
+              <p>Shares</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="analytics-snapshot">
+          <div class="analytics-snapshot-viewport">
+            <div class="analytics-snapshot-track">
+              <button class="analytics-snapshot-item" type="button" data-gallery="analytics" data-index="0">
+                <img src="images/work/pkns/pknstiktok-1.jpg" alt="Analytics screenshot 1" loading="lazy" />
+              </button>
+              <button class="analytics-snapshot-item" type="button" data-gallery="analytics" data-index="1">
+                <img src="images/work/pkns/pknstiktok-2.jpg" alt="Analytics screenshot 2" loading="lazy" />
+              </button>
+              <button class="analytics-snapshot-item" type="button" data-gallery="analytics" data-index="2">
+                <img src="images/work/pkns/pknstiktok-3.PNG" alt="Analytics screenshot 3" loading="lazy" />
+              </button>
+              <button class="analytics-snapshot-item" type="button" data-gallery="analytics" data-index="3">
+                <img src="images/work/pkns/pknstiktok-4.PNG" alt="Analytics screenshot 4" loading="lazy" />
+              </button>
+              <button class="analytics-snapshot-item" type="button" data-gallery="analytics" data-index="4">
+                <img src="images/work/pkns/pknstiktok-5.PNG" alt="Analytics screenshot 5" loading="lazy" />
+              </button>
+              <button class="analytics-snapshot-item" type="button" data-gallery="analytics" data-index="5">
+                <img src="images/work/pkns/pknstiktok-6.PNG" alt="Analytics screenshot 6" loading="lazy" />
+              </button>
+              <button class="analytics-snapshot-item" type="button" data-gallery="analytics" data-index="6">
+                <img src="images/work/pkns/pknstiktok-7.PNG" alt="Analytics screenshot 7" loading="lazy" />
+              </button>
+              <button class="analytics-snapshot-item" type="button" data-gallery="analytics" data-index="7">
+                <img src="images/work/pkns/pknstiktok-8.PNG" alt="Analytics screenshot 8" loading="lazy" />
+              </button>
+              <button class="analytics-snapshot-item" type="button" data-gallery="analytics" data-index="8">
+                <img src="images/work/pkns/pknstiktok-9.PNG" alt="Analytics screenshot 9" loading="lazy" />
+              </button>
+              <button class="analytics-snapshot-item" type="button" data-gallery="analytics" data-index="9">
+                <img src="images/work/pkns/pknstiktok-10.PNG" alt="Analytics screenshot 10" loading="lazy" />
+              </button>
+              <button class="analytics-snapshot-item" type="button" data-gallery="analytics" data-index="10">
+                <img src="images/work/pkns/pknstiktok-11.PNG" alt="Analytics screenshot 11" loading="lazy" />
+              </button>
+              <button class="analytics-snapshot-item" type="button" data-gallery="analytics" data-index="11">
+                <img src="images/work/pkns/pknstiktok-12.PNG" alt="Analytics screenshot 12" loading="lazy" />
+              </button>
+              <button class="analytics-snapshot-item" type="button" data-gallery="analytics" data-index="12">
+                <img src="images/work/pkns/pknstiktok-13.PNG" alt="Analytics screenshot 13" loading="lazy" />
+              </button>
+              <button class="analytics-snapshot-item" type="button" data-gallery="analytics" data-index="13">
+                <img src="images/work/pkns/pknstiktok-14.PNG" alt="Analytics screenshot 14" loading="lazy" />
+              </button>
+              <button class="analytics-snapshot-item" type="button" data-gallery="analytics" data-index="14">
+                <img src="images/work/pkns/pknstiktok-15.PNG" alt="Analytics screenshot 15" loading="lazy" />
+              </button>
+
+              <button class="analytics-snapshot-item" type="button" data-gallery="analytics" data-index="0">
+                <img src="images/work/pkns/pknstiktok-1.jpg" alt="Analytics screenshot 1" loading="lazy" />
+              </button>
+              <button class="analytics-snapshot-item" type="button" data-gallery="analytics" data-index="1">
+                <img src="images/work/pkns/pknstiktok-2.jpg" alt="Analytics screenshot 2" loading="lazy" />
+              </button>
+              <button class="analytics-snapshot-item" type="button" data-gallery="analytics" data-index="2">
+                <img src="images/work/pkns/pknstiktok-3.PNG" alt="Analytics screenshot 3" loading="lazy" />
+              </button>
+              <button class="analytics-snapshot-item" type="button" data-gallery="analytics" data-index="3">
+                <img src="images/work/pkns/pknstiktok-4.PNG" alt="Analytics screenshot 4" loading="lazy" />
+              </button>
+              <button class="analytics-snapshot-item" type="button" data-gallery="analytics" data-index="4">
+                <img src="images/work/pkns/pknstiktok-5.PNG" alt="Analytics screenshot 5" loading="lazy" />
+              </button>
+              <button class="analytics-snapshot-item" type="button" data-gallery="analytics" data-index="5">
+                <img src="images/work/pkns/pknstiktok-6.PNG" alt="Analytics screenshot 6" loading="lazy" />
+              </button>
+              <button class="analytics-snapshot-item" type="button" data-gallery="analytics" data-index="6">
+                <img src="images/work/pkns/pknstiktok-7.PNG" alt="Analytics screenshot 7" loading="lazy" />
+              </button>
+              <button class="analytics-snapshot-item" type="button" data-gallery="analytics" data-index="7">
+                <img src="images/work/pkns/pknstiktok-8.PNG" alt="Analytics screenshot 8" loading="lazy" />
+              </button>
+              <button class="analytics-snapshot-item" type="button" data-gallery="analytics" data-index="8">
+                <img src="images/work/pkns/pknstiktok-9.PNG" alt="Analytics screenshot 9" loading="lazy" />
+              </button>
+              <button class="analytics-snapshot-item" type="button" data-gallery="analytics" data-index="9">
+                <img src="images/work/pkns/pknstiktok-10.PNG" alt="Analytics screenshot 10" loading="lazy" />
+              </button>
+              <button class="analytics-snapshot-item" type="button" data-gallery="analytics" data-index="10">
+                <img src="images/work/pkns/pknstiktok-11.PNG" alt="Analytics screenshot 11" loading="lazy" />
+              </button>
+              <button class="analytics-snapshot-item" type="button" data-gallery="analytics" data-index="11">
+                <img src="images/work/pkns/pknstiktok-12.PNG" alt="Analytics screenshot 12" loading="lazy" />
+              </button>
+              <button class="analytics-snapshot-item" type="button" data-gallery="analytics" data-index="12">
+                <img src="images/work/pkns/pknstiktok-13.PNG" alt="Analytics screenshot 13" loading="lazy" />
+              </button>
+              <button class="analytics-snapshot-item" type="button" data-gallery="analytics" data-index="13">
+                <img src="images/work/pkns/pknstiktok-14.PNG" alt="Analytics screenshot 14" loading="lazy" />
+              </button>
+              <button class="analytics-snapshot-item" type="button" data-gallery="analytics" data-index="14">
+                <img src="images/work/pkns/pknstiktok-15.PNG" alt="Analytics screenshot 15" loading="lazy" />
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="row align-items-center g-4">
+          <div class="col-12">
+            <div class="analytics-card">
+              <h4>Insight</h4>
+              <p class="mb-0">
+                Analytics trends show strong alignment with TikTok’s algorithm,
+                with several performance spikes driven by viral content and
+                audience engagement.
+              </p>
+              <a
+                class="tiktok-link"
+                href="https://www.tiktok.com/@pilihproperty.my"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span class="tiktok-dot"></span>
+                Visit TikTok Page
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="copywriting-section" id="copywriting">
+      <div class="container">
+        <h2 class="copywriting-title">Copywriting</h2>
+        <div class="copywriting-underline"></div>
+        <div class="copywriting-grid">
+          <div class="copywriting-card">
+            <img
+              src="images/work/pkns/pknscopywriting-1.PNG"
+              alt="Copywriting sample 1"
+              loading="lazy"
+            />
+          </div>
+          <div class="copywriting-card">
+            <img
+              src="images/work/pkns/pknscopywriting-2.PNG"
+              alt="Copywriting sample 2"
+              loading="lazy"
+            />
+          </div>
+          <div class="copywriting-card">
+            <img
+              src="images/work/pkns/pknscopywriting-3.PNG"
+              alt="Copywriting sample 3"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="container">
+        <h2 class="contact-title">GET IN TOUCH</h2>
+        <div class="contact-underline"></div>
+        <div class="contact-grid">
+          <div class="contact-item">
+            <a class="contact-icon" href="tel:+60128550706">
+              <img src="images/phone.png" alt="Phone icon" />
+            </a>
+            <div class="contact-label">Phone & Mobile</div>
+            <div class="contact-value">
+              <a href="tel:+60128550706">+60128550706</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <a class="contact-icon" href="mailto:irfanrizal.dgm@gmail.com">
+              <img src="images/email.png" alt="Email icon" />
+            </a>
+            <div class="contact-label">G-mail & Website</div>
+            <div class="contact-value">
+              <a href="mailto:irfanrizal.dgm@gmail.com">
+                irfanrizal.dgm@gmail.com
+              </a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <a
+              class="contact-icon"
+              href="https://maps.google.com/?q=Shah+Alam,+Selangor"
+            >
+              <img src="images/address.png" alt="Address icon" />
+            </a>
+            <div class="contact-label">Address</div>
+            <div class="contact-value">Shah Alam, Selangor</div>
+          </div>
+          <div class="contact-item">
+            <a
+              class="contact-icon"
+              href="https://www.linkedin.com/in/muhamad-irfan-r-1a46542b6/"
+            >
+              <img src="images/linkedin.png" alt="LinkedIn icon" />
+            </a>
+            <div class="contact-label">LinkedIn</div>
+            <div class="contact-value">
+              <a href="https://www.linkedin.com/in/muhamad-irfan-r-1a46542b6/"
+                >Muhamad Irfan R</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="container">
+        © 2026 Irfan Portfolio. All rights reserved. Website Design & Developed
+        by Manwest
+      </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+      <img src="images/backtotop.png" alt="Back to top" />
+    </button>
+
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <div class="lightbox-content">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Close">
+          ✕
+        </button>
+        <button class="lightbox-prev" id="lightboxPrev" aria-label="Previous">
+          ‹
+        </button>
+        <img id="lightboxImage" src="" alt="Expanded view" />
+        <button class="lightbox-next" id="lightboxNext" aria-label="Next">
+          ›
+        </button>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      const backToTopButton = document.getElementById("backToTop");
+      if (backToTopButton) {
+        const toggleBackToTop = () => {
+          if (window.scrollY > 300) {
+            backToTopButton.classList.add("show");
+          } else {
+            backToTopButton.classList.remove("show");
+          }
+        };
+
+        backToTopButton.addEventListener("click", () => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+
+        window.addEventListener("scroll", toggleBackToTop);
+        toggleBackToTop();
+      }
+
+      (function () {
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImage = document.getElementById("lightboxImage");
+        const lightboxPrev = document.getElementById("lightboxPrev");
+        const lightboxNext = document.getElementById("lightboxNext");
+        const lightboxClose = document.getElementById("lightboxClose");
+        if (!lightbox || !lightboxImage) return;
+
+        const galleries = {
+          posters: [
+            "images/work/pkns/pknsposter-1.png",
+            "images/work/pkns/pknsposter-2.png",
+            "images/work/pkns/pknsposter-3.png",
+            "images/work/pkns/pknsposter-4.png",
+            "images/work/pkns/pknsposter-5.png",
+            "images/work/pkns/pknsposter-6.png",
+            "images/work/pkns/pknsposter-7.png",
+          ],
+          analytics: [
+            "images/work/pkns/pknstiktok-1.jpg",
+            "images/work/pkns/pknstiktok-2.jpg",
+            "images/work/pkns/pknstiktok-3.PNG",
+            "images/work/pkns/pknstiktok-4.PNG",
+            "images/work/pkns/pknstiktok-5.PNG",
+            "images/work/pkns/pknstiktok-6.PNG",
+            "images/work/pkns/pknstiktok-7.PNG",
+            "images/work/pkns/pknstiktok-8.PNG",
+            "images/work/pkns/pknstiktok-9.PNG",
+            "images/work/pkns/pknstiktok-10.PNG",
+            "images/work/pkns/pknstiktok-11.PNG",
+            "images/work/pkns/pknstiktok-12.PNG",
+            "images/work/pkns/pknstiktok-13.PNG",
+            "images/work/pkns/pknstiktok-14.PNG",
+            "images/work/pkns/pknstiktok-15.PNG",
+          ],
+          copywriting: [
+            "images/work/pkns/pknscopywriting-1.PNG",
+            "images/work/pkns/pknscopywriting-2.PNG",
+            "images/work/pkns/pknscopywriting-3.PNG",
+          ],
+        };
+
+        let activeIndex = 0;
+        let activeGallery = "posters";
+
+        const openLightbox = (gallery, index) => {
+          activeGallery = gallery;
+          activeIndex = index;
+          lightboxImage.src = galleries[gallery][index];
+          lightbox.classList.add("show");
+          lightbox.setAttribute("aria-hidden", "false");
+        };
+
+        const closeLightbox = () => {
+          lightbox.classList.remove("show");
+          lightbox.setAttribute("aria-hidden", "true");
+        };
+
+        const showNext = (direction) => {
+          const items = galleries[activeGallery];
+          activeIndex = (activeIndex + direction + items.length) % items.length;
+          lightboxImage.src = items[activeIndex];
+        };
+
+        document.querySelectorAll(".poster-grid .poster-card").forEach((card) => {
+          card.addEventListener("click", () => {
+            const index = Number(card.dataset.index) || 0;
+            openLightbox("posters", index);
+          });
+        });
+
+        document
+          .querySelectorAll(".analytics-snapshot-item")
+          .forEach((item) => {
+            item.addEventListener("click", () => {
+              const index = Number(item.dataset.index) || 0;
+              openLightbox("analytics", index);
+            });
+          });
+
+        document.querySelectorAll(".copywriting-card").forEach((card, idx) => {
+          card.addEventListener("click", () => {
+            openLightbox("copywriting", idx);
+          });
+        });
+
+        lightboxPrev?.addEventListener("click", () => showNext(-1));
+        lightboxNext?.addEventListener("click", () => showNext(1));
+        lightboxClose?.addEventListener("click", closeLightbox);
+        lightbox.addEventListener("click", (event) => {
+          if (event.target === lightbox) closeLightbox();
+        });
+        document.addEventListener("keydown", (event) => {
+          if (!lightbox.classList.contains("show")) return;
+          if (event.key === "Escape") closeLightbox();
+          if (event.key === "ArrowRight") showNext(1);
+          if (event.key === "ArrowLeft") showNext(-1);
+        });
+      })();
+    </script>
+  </body>
+</html>
